@@ -1,0 +1,14 @@
+﻿Extension
+作为扩展方法,直接放到Magicdawn namespace下
+
+Helper
+一些Helper类,直接放到Magicdawn namespace下
+
+Option
+放一些Helper方法用到的复杂参数,直接放到Magicdawn namespace下
+
+using Magicdawn;
+可以使用
+	Extension
+	Helper
+	Option

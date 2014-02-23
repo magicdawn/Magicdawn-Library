@@ -1,0 +1,16 @@
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\TestForm.exe.config
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\TestForm.exe
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\TestForm.pdb
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\Magicdawn.dll
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\Magicdawn.pdb
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.csprojResolveAssemblyReference.cache
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmMain.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.Properties.Resources.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.csproj.GenerateResource.Cache
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.exe
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.pdb
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.Form1.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmDragHelper.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmProcessHelper.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmAnimate.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmControlHelper.resources

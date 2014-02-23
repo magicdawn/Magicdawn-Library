@@ -1,0 +1,8 @@
+D:\C#\project\Magicdawn Library\Magicdawn\bin\Debug\Magicdawn.dll
+D:\C#\project\Magicdawn Library\Magicdawn\bin\Debug\Magicdawn.pdb
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.ControlResource.resources
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.csproj.GenerateResource.Cache
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.dll
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.pdb
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.Winform.LittleIdea.resources
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.csprojResolveAssemblyReference.cache

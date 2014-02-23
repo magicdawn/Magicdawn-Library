@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8CA18FD-D0DE-4A09-81CF-F8AEB3B85744}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Magicdawn</RootNamespace>
+    <AssemblyName>Magicdawn</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.5.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\ControlExtension.cs" />
+    <Compile Include="Helper\AnimateHelper.cs" />
+    <Compile Include="Helper\DragHelper.cs" />
+    <Compile Include="Extension\ListExtension.cs" />
+    <Compile Include="Helper\MemoryHelper.cs" />
+    <Compile Include="Helper\ProcessHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
+    <Compile Include="Option\AnimateOption.cs" />
+    <Compile Include="Option\DragTextMode.cs" />
+    <Compile Include="Extension\BasicTypeExtension.cs" />
+    <Compile Include="Option\CoordinateOption.cs" />
+    <Compile Include="Extension\MessageExtension.cs" />
+    <Compile Include="Extension\PointExtension.cs" />
+    <Compile Include="Extension\GraphicsExtension.cs" />
+    <Compile Include="Helper\ColorHelper.cs" />
+    <Compile Include="Extension\DateTimeExtension.cs" />
+    <Compile Include="Helper\DrawHelper.cs" />
+    <Compile Include="Helper\FormHelper.cs" />
+    <Compile Include="Helper\UpdateLayerWindowHelper.cs" />
+    <Compile Include="Helper\UnicodeHelper.cs" />
+    <Compile Include="Helper\UrlHelper.cs" />
+    <Compile Include="Option\ShakeOption.cs" />
+    <Compile Include="Win32\Consts.cs" />
+    <Compile Include="Win32\ExternDll.cs" />
+    <None Include="Win32\MS\NativeMethods.cs" />
+    <None Include="Win32\MS\NativeMethodsSetLastError.cs" />
+    <None Include="Win32\MS\SafeNativeMethods.cs" />
+    <None Include="Win32\MS\UnsafeNativeMethods.cs" />
+    <Compile Include="Win32\NotUnderstand\Enums.cs" />
+    <Compile Include="Win32\Enum\KeyModifier.cs" />
+    <Compile Include="Win32\Enum\KEYS.cs" />
+    <Compile Include="Winform\LittleIdea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winform\SmallIdeaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Win32\WinMsg.cs" />
+    <Compile Include="Win32\WinStyle.cs" />
+    <Compile Include="Win32\NotUnderstand\KeyHook.cs" />
+    <Compile Include="Win32\NotUnderstand\MouseEventExtArgs.cs" />
+    <Compile Include="Win32\NotUnderstand\MouseHook.cs" />
+    <Compile Include="Win32\Api.cs" />
+    <Compile Include="Win32\Structs.cs" />
+    <Compile Include="Winform\DawnTextBoxActionList.cs" />
+    <Compile Include="Winform\DawnTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Winform\DawnTextBoxDesigner.cs" />
+    <Compile Include="Winform\FtpClient.cs" />
+    <Compile Include="Http\Browser.cs" />
+    <Compile Include="Http\HttpHelper.cs" />
+    <Compile Include="Helper\Md5Helper.cs" />
+    <Compile Include="Helper\SqlHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helper\ValidateCodeHelper.cs" />
+    <Compile Include="Helper\GlassHelper.cs" />
+    <Compile Include="Winform\DawnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winform\QQCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Winform\QQRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Winform\ToolStripRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Winform\TxtLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Winform\UpdateLayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ControlResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ControlResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winform\LittleIdea.resx">
+      <DependentUpon>LittleIdea.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBoxLight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBoxNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQRadioButtonHighlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQRadioButtonHighlightChecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQRadioButtonNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQRadioButtonNormalChecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQCheckBoxHighlightChecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQCheckBoxHighlightMulti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQCheckBoxHighlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQCheckBoxNormalChecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQCheckBoxNormalMulti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQCheckBoxNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="说明.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

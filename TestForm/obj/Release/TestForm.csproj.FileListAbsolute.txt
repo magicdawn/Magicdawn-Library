@@ -1,0 +1,11 @@
+D:\C#\project\Magicdawn Library\TestForm\bin\Release\TestForm.exe.config
+D:\C#\project\Magicdawn Library\TestForm\bin\Release\TestForm.exe
+D:\C#\project\Magicdawn Library\TestForm\bin\Release\TestForm.pdb
+D:\C#\project\Magicdawn Library\TestForm\bin\Release\Magicdawn.dll
+D:\C#\project\Magicdawn Library\TestForm\bin\Release\Magicdawn.pdb
+D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.csprojResolveAssemblyReference.cache
+D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.Properties.Resources.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.csproj.GenerateResource.Cache
+D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.exe
+D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.pdb
+D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.FrmMain.resources
