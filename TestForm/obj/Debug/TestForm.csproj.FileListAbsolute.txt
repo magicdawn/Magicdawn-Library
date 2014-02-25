@@ -14,3 +14,6 @@ D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmDragHelper.resour
 D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmProcessHelper.resources
 D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmAnimate.resources
 D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmControlHelper.resources
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\Magicdawn.xml
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\WHC.OrderWater.Commons.dll
+D:\C#\project\Magicdawn Library\TestForm\bin\Debug\WHC.OrderWater.Commons.xml

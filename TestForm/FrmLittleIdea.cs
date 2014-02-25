@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TestForm
 {
-    public partial class FrmLittleIdea : Magicdawn.Winform.LittleIdea
+    public partial class FrmLittleIdea : Magicdawn.Winform.MyForm
     {
         public FrmLittleIdea()
         {

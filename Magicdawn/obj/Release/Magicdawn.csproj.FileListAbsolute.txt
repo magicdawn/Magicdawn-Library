@@ -4,3 +4,4 @@ D:\C#\project\Magicdawn Library\Magicdawn\obj\Release\Magicdawn.dll
 D:\C#\project\Magicdawn Library\Magicdawn\obj\Release\Magicdawn.pdb
 D:\C#\project\Magicdawn Library\Magicdawn\obj\Release\Magicdawn.ControlResource.resources
 D:\C#\project\Magicdawn Library\Magicdawn\obj\Release\Magicdawn.csproj.GenerateResource.Cache
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Release\Magicdawn.Winform.LittleIdea.resources

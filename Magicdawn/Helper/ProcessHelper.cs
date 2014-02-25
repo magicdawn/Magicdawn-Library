@@ -12,7 +12,7 @@ namespace Magicdawn
         {
             if (processName.EndsWith(".exe"))
             {
-                processName = processName.Remove(processName.IndexOf(".exe"));
+                processName = processName.Remove(processName.LastIndexOf(".exe"));
             }
 
             //找 这句不会抛异常,不过length为0

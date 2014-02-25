@@ -38,7 +38,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dawnTextBox1 = new Magicdawn.Winform.DawnTextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -47,12 +46,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.qqRadioButton1 = new Magicdawn.Winform.QQRadioButton();
-            this.qqCheckBox1 = new Magicdawn.Winform.QQCheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.dawnTextBox1 = new Magicdawn.Winform.MyTextBox();
+            this.qqRadioButton1 = new Magicdawn.Winform.QQRadioButton();
+            this.qqCheckBox1 = new Magicdawn.Winform.QQCheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,10 +82,11 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(23, 52);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 100);
+            this.textBox1.Size = new System.Drawing.Size(168, 100);
             this.textBox1.TabIndex = 2;
             // 
             // button3
@@ -122,7 +124,6 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dawnTextBox1);
             this.groupBox1.Location = new System.Drawing.Point(23, 175);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(302, 90);
@@ -154,16 +155,6 @@
             this.label1.Size = new System.Drawing.Size(137, 12);
             this.label1.TabIndex = 7;
             this.label1.Text = "EnterTextBox没有回车声";
-            // 
-            // dawnTextBox1
-            // 
-            this.dawnTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dawnTextBox1.EnableDrag = false;
-            this.dawnTextBox1.Location = new System.Drawing.Point(172, 14);
-            this.dawnTextBox1.Name = "dawnTextBox1";
-            this.dawnTextBox1.Size = new System.Drawing.Size(124, 21);
-            this.dawnTextBox1.TabIndex = 10;
-            this.dawnTextBox1.WaterText = "haha";
             // 
             // button5
             // 
@@ -248,29 +239,6 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // qqRadioButton1
-            // 
-            this.qqRadioButton1.AutoSize = true;
-            this.qqRadioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.qqRadioButton1.Location = new System.Drawing.Point(197, 74);
-            this.qqRadioButton1.Name = "qqRadioButton1";
-            this.qqRadioButton1.Size = new System.Drawing.Size(107, 16);
-            this.qqRadioButton1.TabIndex = 12;
-            this.qqRadioButton1.TabStop = true;
-            this.qqRadioButton1.Text = "qqRadioButton1";
-            this.qqRadioButton1.UseVisualStyleBackColor = false;
-            // 
-            // qqCheckBox1
-            // 
-            this.qqCheckBox1.AutoSize = true;
-            this.qqCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.qqCheckBox1.Location = new System.Drawing.Point(197, 52);
-            this.qqCheckBox1.Name = "qqCheckBox1";
-            this.qqCheckBox1.Size = new System.Drawing.Size(90, 16);
-            this.qqCheckBox1.TabIndex = 11;
-            this.qqCheckBox1.Text = "qqCheckBox1";
-            this.qqCheckBox1.UseVisualStyleBackColor = false;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button13);
@@ -313,11 +281,55 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(332, 292);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(100, 24);
+            this.button14.TabIndex = 20;
+            this.button14.Text = "button14";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // dawnTextBox1
+            // 
+            this.dawnTextBox1.Location = new System.Drawing.Point(332, 265);
+            this.dawnTextBox1.Name = "dawnTextBox1";
+            this.dawnTextBox1.Size = new System.Drawing.Size(100, 21);
+            this.dawnTextBox1.TabIndex = 19;
+            this.dawnTextBox1.WaterFont = null;
+            this.dawnTextBox1.WaterText = "asasa";
+            // 
+            // qqRadioButton1
+            // 
+            this.qqRadioButton1.AutoSize = true;
+            this.qqRadioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.qqRadioButton1.Location = new System.Drawing.Point(197, 74);
+            this.qqRadioButton1.Name = "qqRadioButton1";
+            this.qqRadioButton1.Size = new System.Drawing.Size(107, 16);
+            this.qqRadioButton1.TabIndex = 12;
+            this.qqRadioButton1.TabStop = true;
+            this.qqRadioButton1.Text = "qqRadioButton1";
+            this.qqRadioButton1.UseVisualStyleBackColor = false;
+            // 
+            // qqCheckBox1
+            // 
+            this.qqCheckBox1.AutoSize = true;
+            this.qqCheckBox1.BackColor = System.Drawing.Color.Transparent;
+            this.qqCheckBox1.Location = new System.Drawing.Point(197, 52);
+            this.qqCheckBox1.Name = "qqCheckBox1";
+            this.qqCheckBox1.Size = new System.Drawing.Size(90, 16);
+            this.qqCheckBox1.TabIndex = 11;
+            this.qqCheckBox1.Text = "qqCheckBox1";
+            this.qqCheckBox1.UseVisualStyleBackColor = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 396);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.dawnTextBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -356,7 +368,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Magicdawn.Winform.DawnTextBox dawnTextBox1;
         private Magicdawn.Winform.QQCheckBox qqCheckBox1;
         private Magicdawn.Winform.QQRadioButton qqRadioButton1;
         private System.Windows.Forms.Button button5;
@@ -371,6 +382,8 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button13;
+        private Magicdawn.Winform.MyTextBox dawnTextBox1;
+        private System.Windows.Forms.Button button14;
     }
 }
 

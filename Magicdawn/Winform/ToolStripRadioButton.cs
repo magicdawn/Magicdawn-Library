@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
+
 /*
  * 通过Checked属性 Click事件来模拟RadioButon
  * 
@@ -12,14 +13,14 @@ using System.ComponentModel;
  *  
  * so应该自己来管理checked状态
  */
+
 namespace Magicdawn.Winform
 {
-    //
+    /// <summary>
+    /// ToolStrip上的单选按钮,设置GroupName为一组
+    /// </summary>
     public class ToolStripRadioButton : ToolStripButton
     {
-        /// <summary>
-        /// 
-        /// </summary>
         [Description("同一GroupName下的RadioButton只能单选"), Category("自定义属性")]
         public string GroupName { get; set; }
 

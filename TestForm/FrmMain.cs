@@ -62,6 +62,7 @@ namespace TestForm
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            //this.Icon = Magicdawn.IconLib.Icon.AccountLevelFiltering.GetIcon32();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -122,6 +123,11 @@ namespace TestForm
         private void button13_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this.PointToClient(Control.MousePosition).ToString());
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            this.dawnTextBox1.Font = new Font("Consolas",10.5f);
         }
     }
 }
