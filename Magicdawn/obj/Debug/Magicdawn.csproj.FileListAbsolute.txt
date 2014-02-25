@@ -5,3 +5,4 @@ D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.csproj.GenerateRes
 D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.dll
 D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.pdb
 D:\C#\project\Magicdawn Library\Magicdawn\bin\Debug\Magicdawn.XML
+D:\C#\project\Magicdawn Library\Magicdawn\obj\Debug\Magicdawn.csprojResolveAssemblyReference.cache
