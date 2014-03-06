@@ -51,9 +51,13 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numberTextBox1 = new Magicdawn.Winform.NumberTextBox();
             this.dawnTextBox1 = new Magicdawn.Winform.MyTextBox();
             this.qqRadioButton1 = new Magicdawn.Winform.QQRadioButton();
             this.qqCheckBox1 = new Magicdawn.Winform.QQCheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -113,7 +117,7 @@
             // 
             this.btnGlassForm.Location = new System.Drawing.Point(564, 12);
             this.btnGlassForm.Name = "btnGlassForm";
-            this.btnGlassForm.Size = new System.Drawing.Size(75, 23);
+            this.btnGlassForm.Size = new System.Drawing.Size(78, 23);
             this.btnGlassForm.TabIndex = 5;
             this.btnGlassForm.Text = "毛玻璃";
             this.btnGlassForm.UseVisualStyleBackColor = true;
@@ -150,6 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(21, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 12);
@@ -291,6 +296,30 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(578, 292);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(117, 21);
+            this.textBox3.TabIndex = 21;
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(576, 271);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 12);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "key-code-data-value";
+            // 
+            // numberTextBox1
+            // 
+            this.numberTextBox1.Location = new System.Drawing.Point(578, 354);
+            this.numberTextBox1.Name = "numberTextBox1";
+            this.numberTextBox1.Size = new System.Drawing.Size(117, 21);
+            this.numberTextBox1.TabIndex = 23;
+            // 
             // dawnTextBox1
             // 
             this.dawnTextBox1.Location = new System.Drawing.Point(332, 265);
@@ -323,11 +352,24 @@
             this.qqCheckBox1.Text = "qqCheckBox1";
             this.qqCheckBox1.UseVisualStyleBackColor = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(576, 329);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 12);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "number textbox";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 396);
+            this.Controls.Add(this.numberTextBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.dawnTextBox1);
             this.Controls.Add(this.groupBox4);
@@ -384,6 +426,10 @@
         private System.Windows.Forms.Button button13;
         private Magicdawn.Winform.MyTextBox dawnTextBox1;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
+        private Magicdawn.Winform.NumberTextBox numberTextBox1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -1,0 +1,4 @@
+D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\bin\Release\Magicdawn.DotNetBars.dll
+D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\bin\Release\Magicdawn.DotNetBars.pdb
+D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\obj\Release\Magicdawn.DotNetBars.dll
+D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\obj\Release\Magicdawn.DotNetBars.pdb

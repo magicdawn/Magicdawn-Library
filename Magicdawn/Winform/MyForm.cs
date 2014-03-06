@@ -23,10 +23,6 @@ namespace Magicdawn.Winform
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F);
             //起始位置
             this.StartPosition = FormStartPosition.CenterScreen;
-            //无最大化
-            this.MaximizeBox = false;
-            //border style
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
     }
 }

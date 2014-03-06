@@ -4,21 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Magicdawn
+public static class MessageExtension
 {
-    public static class MessageExtension
+    /// <summary>
+    /// Message.Create().Send();
+    /// </summary>
+    /// <param name="m"></param>
+    public static void Send(this Message m)
     {
-        /// <summary>
-        /// Message.Create().Send();
-        /// </summary>
-        /// <param name="m"></param>
-        public static void Send(this Message m)
-        {
-            Magicdawn.Win32.Api.SendMessage(
-                m.HWnd,
-                m.Msg,
-                (int)m.WParam,
-                (int)m.LParam);
-        }
+        Magicdawn.Win32.Api.SendMessage(
+            m.HWnd,
+            m.Msg,
+            (int)m.WParam,
+            (int)m.LParam);
     }
 }

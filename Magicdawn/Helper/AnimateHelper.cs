@@ -135,7 +135,6 @@ namespace Magicdawn
             double currentX = oldX;
             double currentY = oldY;
             //通过 一段时间 把Location old->new
-            var t = new Thread(() => {
                 var timer = new System.Threading.Timer(state => {
                     currentX += stepX;
                     currentY += stepY;
@@ -149,10 +148,6 @@ namespace Magicdawn
                 ctl.Invoke(new Action(() => {
                     ctl.Location = new Point(newX, newY);
                 }));
-            }) { IsBackground = true };
-            t.Start();
-            t.Join();
-            //Thread.Sleep(Option.Speed);//将调用线程展亭这么多
         }
 
         //slide

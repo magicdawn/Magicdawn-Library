@@ -73,6 +73,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGlassHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGlassHelper.Designer.cs">
+      <DependentUpon>FrmGlassHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLittleIdea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGlassHelper.resx">
+      <DependentUpon>FrmGlassHelper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>

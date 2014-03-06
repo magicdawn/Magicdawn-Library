@@ -1,5 +1,5 @@
 ﻿Extension
-作为扩展方法,直接放到Magicdawn namespace下
+作为扩展方法,不用namespace,引用dll后可直接使用方法
 
 Helper
 一些Helper类,直接放到Magicdawn namespace下

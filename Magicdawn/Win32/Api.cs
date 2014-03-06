@@ -46,7 +46,7 @@ namespace Magicdawn.Win32
         /// <param name="dwProcessId">进程ID</param>
         /// <returns></returns>
         [DllImport("Kernel32.dll")]
-        public static extern IntPtr OpenProcess(int dwDesiredAccess, bool hInheritHandle, int dwProcessId);
+        public static extern IntPtr OpenProcess(int dwDesiredAccess,bool hInheritHandle,int dwProcessId);
         // GetWindowThreadProcessId(hwnd, out calcID);   
         //calcProcess = OpenProcess(PROCESS_VM_READ | PROCESS_VM_WRITE, false, calcID);
 
@@ -94,13 +94,13 @@ namespace Magicdawn.Win32
         /// <param name="nSize">lpBuffer字符串的最大长度</param>
         /// <returns>复制到lpBuffer的一个字符串的长度。如果lpBuffer不够大，不能容下整个字符串，就会返回lpbuffer要求的长度。零表地失败。会设置GetLastError</returns>
         [DllImport("Kernel32.dll")]
-        public static extern long GetWindowsDirectory(StringBuilder lpBuffer, int nSize);
+        public static extern long GetWindowsDirectory(StringBuilder lpBuffer,int nSize);
 
         /// <summary>
         /// 获取System32文件夹的路径
         /// </summary>
         [DllImport("Kernel32.dll")]
-        public static extern long GetSystemDirectory(StringBuilder lpBuffer, int nSize);
+        public static extern long GetSystemDirectory(StringBuilder lpBuffer,int nSize);
 
         /// <summary>
         /// 
@@ -138,28 +138,28 @@ namespace Magicdawn.Win32
         /// <param name="cbfileInfo">psfi的byte值</param>
         /// <param name="uFlags">指明需要返回的文件信息标识符,请参见：enum SHGFI</param>
         [DllImport("shell32.dll")]
-        public static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, int cbfileInfo, uint uFlags);
+        public static extern IntPtr SHGetFileInfo(string pszPath,uint dwFileAttributes,ref SHFILEINFO psfi,int cbfileInfo,uint uFlags);
         #endregion
 
         #region user32.dll
 
         #region 激活窗口
-        [DllImport("user32.dll", EntryPoint = "SetActiveWindow")]
+        [DllImport("user32.dll",EntryPoint = "SetActiveWindow")]
         public static extern int SetActiveWindow(
             int hwnd
         );
 
-        [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
+        [DllImport("user32.dll",EntryPoint = "SetForegroundWindow")]
         public static extern int SetForegroundWindow(
             int hwnd
         );
 
-        [DllImport("user32.dll", EntryPoint = "BringWindowToTop")]
+        [DllImport("user32.dll",EntryPoint = "BringWindowToTop")]
         public static extern int BringWindowToTop(
             IntPtr hwnd
         );
 
-        [DllImport("user32.dll", EntryPoint = "ShowWindow")]
+        [DllImport("user32.dll",EntryPoint = "ShowWindow")]
         public static extern int ShowWindow(
             int hwnd,
             int nCmdShow
@@ -179,7 +179,7 @@ namespace Magicdawn.Win32
         /// </summary>
         /// <param name="hwnd">窗口句柄</param>
         /// <returns></returns>
-        [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        [DllImport("user32.dll",CharSet = CharSet.Unicode,SetLastError = true)]
         public static extern bool DestroyWindow(IntPtr hwnd);
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Magicdawn.Win32
         /// <param name="nHeightEllipse">椭圆的高度</param>
         /// <returns></returns>
         [DllImport("gdi32.dll")]
-        public static extern int CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+        public static extern int CreateRoundRectRgn(int nLeftRect,int nTopRect,int nRightRect,int nBottomRect,int nWidthEllipse,int nHeightEllipse);
 
         #region FindWindow
 
@@ -213,7 +213,7 @@ namespace Magicdawn.Win32
         /// <param name="lpWindowName">指向包含了窗口文本(或标签)的空中止(C语言)字串的指针;或设
         /// 为零,表示接收任何窗口标题</param>
         [DllImport("user32.dll")]
-        public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        public static extern IntPtr FindWindow(string lpClassName,string lpWindowName);
 
         /// <summary>
         /// 
@@ -232,7 +232,7 @@ namespace Magicdawn.Win32
         /// <param name="lpWindowName">欲搜索的类名。零表示忽略</param>
         /// <returns></returns>
         [DllImport("user32.dll")]
-        public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpClassName, string lpWindowName);
+        public static extern IntPtr FindWindowEx(IntPtr hwndParent,IntPtr hwndChildAfter,string lpClassName,string lpWindowName);
 
         #endregion
 
@@ -244,7 +244,7 @@ namespace Magicdawn.Win32
         /// <param name="hWnd">目标窗口</param>
         /// <param name="lpRect">指定一个矩形，用客户区域的大小载入（以像素为单位）</param>
         [DllImport("user32.dll")]
-        public static extern bool GetClientRect(int hWnd, ref RECT lpRect);
+        public static extern bool GetClientRect(int hWnd,ref RECT lpRect);
 
         /// <summary>
         /// <para>该函数检取光标的位置，以屏幕坐标表示。</para>
@@ -259,7 +259,7 @@ namespace Magicdawn.Win32
         /// </summary>
         /// <param name="hWnd"></param>
         /// <returns></returns>
-        [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
+        [DllImport("user32.dll",ExactSpelling = true,SetLastError = true)]
         public static extern IntPtr GetDC(IntPtr hWnd);
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Magicdawn.Win32
         /// <param name="hWnd">想获得范围矩形的那个窗口的句柄</param>
         /// <param name="lpRect">屏幕坐标中随同窗口装载的矩形</param>
         [DllImport("user32.dll")]
-        public static extern bool GetWindowRect(int hWnd, ref RECT lpRect);
+        public static extern bool GetWindowRect(int hWnd,ref RECT lpRect);
 
         /// <summary>
         /// 这个函数获得指定线程的标识符,此线程创建了指定的窗口,并且随机的产生了这个标识符.
@@ -284,7 +284,7 @@ namespace Magicdawn.Win32
         /// <param name="ID">用于装载拥有那个窗口的一个进程的标识符</param>
         /// <returns>拥有窗口的线程的标识符</returns>
         [DllImport("user32.dll")]
-        public static extern int GetWindowThreadProcessId(IntPtr hwnd, out int ID);
+        public static extern int GetWindowThreadProcessId(IntPtr hwnd,out int ID);
 
         /// <summary>
         /// 合成一次击键事件
@@ -294,7 +294,7 @@ namespace Magicdawn.Win32
         /// <param name="dwFlags">这里的整数类型0为按下，2为释放</param>
         /// <param name="dwExtraInfo">这里是整数类型，一般情况下为0(定义与击键相关的附加的32位值)</param>
         [DllImport("user32.dll")]
-        public static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
+        public static extern void keybd_event(byte bVk,byte bScan,int dwFlags,int dwExtraInfo);
 
         /// <summary>
         /// 综合鼠标击键和鼠标动作（会真的移动鼠标）
@@ -308,7 +308,7 @@ namespace Magicdawn.Win32
         /// <para>(应用程序调用函数GetMessageExtraInfo来获得此附加信息)</para>
         /// </param>
         [DllImport("user32.dll")]
-        public static extern void mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
+        public static extern void mouse_event(int dwFlags,int dx,int dy,int dwData,int dwExtraInfo);
 
         /// <summary>
         /// <para>该函数将一个消息放入（寄送）到与指定窗口创建的线程相联系消息队列里，不等待线程</para>
@@ -320,8 +320,8 @@ namespace Magicdawn.Win32
         /// <param name="Msg">消息标识符</param>
         /// <param name="wParam">具体由消息决定</param>
         /// <param name="lParam">具体由消息决定</param>
-        [DllImport("user32.dll", SetLastError = true)]
-        public static extern bool PostMessage(int hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll",SetLastError = true)]
+        public static extern bool PostMessage(int hWnd,int Msg,int wParam,int lParam);
 
         /// <summary>
         /// 
@@ -329,8 +329,8 @@ namespace Magicdawn.Win32
         /// <param name="hWnd"></param>
         /// <param name="hDC"></param>
         /// <returns></returns>
-        [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
-        public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
+        [DllImport("user32.dll",ExactSpelling = true,SetLastError = true)]
+        public static extern int ReleaseDC(IntPtr hWnd,IntPtr hDC);
 
         /// <summary>
         /// <para>注册系统热键</para>
@@ -342,7 +342,7 @@ namespace Magicdawn.Win32
         /// <param name="fsModifiers">标识热键是否在按Alt、Ctrl、Shift、Windows等键时才会生效</param>
         /// <param name="vk">定义热键的内容</param>
         /// <returns>是否成功</returns>
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll",SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool RegisterHotKey(
             IntPtr hWnd,
@@ -357,9 +357,9 @@ namespace Magicdawn.Win32
         /// <param name="hWnd">要取消热键的窗口的句柄</param>
         /// <param name="id">要取消热键的ID</param>
         /// <returns>是否成功</returns>
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll",SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+        public static extern bool UnregisterHotKey(IntPtr hWnd,int id);
 
         /// <summary>
         /// <para>该函数从当前线程中的窗口释放鼠标捕获，并恢复通常的鼠标输入处理。捕获鼠标的窗口接收所有</para>
@@ -381,7 +381,7 @@ namespace Magicdawn.Win32
         /// <param name="wParam">具体取决于消息</param>
         /// <param name="lParam">具体取决于消息</param>
         [DllImport("user32.dll")]
-        public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+        public static extern IntPtr SendMessage(IntPtr hWnd,uint Msg,IntPtr wParam,IntPtr lParam);
 
         /// <summary>
         /// <para>该函数将指定的消息发送到一个或多个窗口。</para>
@@ -393,8 +393,8 @@ namespace Magicdawn.Win32
         /// <param name="Msg">消息的标识符</param>
         /// <param name="wParam">具体取决于消息</param>
         /// <param name="lParam">具体取决于消息</param>
-        [DllImport("User32.dll", CharSet = CharSet.Auto, EntryPoint = "SendMessageA")]
-        public static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("User32.dll",CharSet = CharSet.Auto,EntryPoint = "SendMessageA")]
+        public static extern IntPtr SendMessage(IntPtr hWnd,int Msg,int wParam,int lParam);
 
         /// <summary>
         /// <para>该函数将指定的消息发送到一个或多个窗口。</para>
@@ -407,7 +407,7 @@ namespace Magicdawn.Win32
         /// <param name="wParam">具体取决于消息</param>
         /// <param name="lParam">具体取决于消息</param>
         [DllImport("user32.dll")]
-        public static extern IntPtr SendMessage(IntPtr hWnd, int msg, int wParam, ref RECT lParam);
+        public static extern IntPtr SendMessage(IntPtr hWnd,int msg,int wParam,ref RECT lParam);
 
         #endregion
 
@@ -430,7 +430,7 @@ namespace Magicdawn.Win32
         /// <param name="x">鼠标指针在屏幕像素坐标系统中的X位置</param>
         /// <param name="y">鼠标指针在屏幕像素坐标系统中的Y位置</param>
         [DllImport("user32.dll")]
-        public static extern bool SetCursorPos(int x, int y);
+        public static extern bool SetCursorPos(int x,int y);
 
         /// <summary>
         /// 设置窗口在屏幕中的位置
@@ -444,7 +444,7 @@ namespace Magicdawn.Win32
         /// <param name="uFlags"></param>
         /// <returns></returns>
         [DllImport("user32.dll")]
-        public static extern bool SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        public static extern bool SetWindowPos(IntPtr hWnd,int hWndInsertAfter,int X,int Y,int cx,int cy,uint uFlags);
 
         /// <summary>
         /// 设置窗口的区域的窗口。窗口区域决定在窗户上的地区——该系统允许绘画。
@@ -454,7 +454,7 @@ namespace Magicdawn.Win32
         /// <param name="hRgn">处理区域</param>
         /// <param name="bRedraw">重绘窗体选项</param>
         [DllImport("user32.dll")]
-        public static extern int SetWindowRgn(IntPtr hwnd, int hRgn, Boolean bRedraw);
+        public static extern int SetWindowRgn(IntPtr hwnd,int hRgn,Boolean bRedraw);
 
         /// <summary>
         /// 小红帽的UpdatelayeredWindow,透明窗口
@@ -469,15 +469,15 @@ namespace Magicdawn.Win32
         /// <param name="pblend"></param>
         /// <param name="dwFlags"></param>
         /// <returns></returns>
-        [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
-        public static extern bool UpdateLayeredWindow(IntPtr hWnd, IntPtr hdcDst, ref Point pptDst, ref Size psize, IntPtr hdcSrc, ref Point ppSrc, Int32 crKey, ref BLENDFUNCTION pblend, Int32 dwFlags);
+        [DllImport("user32.dll",ExactSpelling = true,SetLastError = true)]
+        public static extern bool UpdateLayeredWindow(IntPtr hWnd,IntPtr hdcDst,ref Point pptDst,ref Size psize,IntPtr hdcSrc,ref Point ppSrc,Int32 crKey,ref BLENDFUNCTION pblend,Int32 dwFlags);
 
         /// <summary>
         /// 该函数获得包含指定点的窗口的句柄。
         /// </summary>
         /// <param name="Point">Point指定一个被检测的点，该点为struct类型</param>
         /// <returns>返回值为包含该点的窗口的句柄。如果包含指定点的窗口不存在，返回值为NULL</returns>
-        [DllImport("user32.dll", EntryPoint = "WindowFromPoint")]
+        [DllImport("user32.dll",EntryPoint = "WindowFromPoint")]
         public static extern IntPtr WindowFromPoint(Point Point);
 
         #region hook
@@ -504,7 +504,7 @@ namespace Magicdawn.Win32
         ///     <para>若此参数值为0,则该挂钩处理过程与所有现存的线程相关.</para>
         /// </param>
         [DllImport("user32.dll")]
-        public static extern int SetWindowsHookEx(HookType idHook, HookProc lpfn, IntPtr hInstance, int threadId);
+        public static extern int SetWindowsHookEx(HookType idHook,HookProc lpfn,IntPtr hInstance,int threadId);
 
         /// <summary>
         /// 卸载钩子
@@ -525,7 +525,7 @@ namespace Magicdawn.Win32
         /// <param name="lParam">要传递的参数; 由钩子类型决定是什么参数</param>
         /// <returns></returns>
         [DllImport("user32.dll")]
-        public static extern int CallNextHookEx(int idHook, int nCode, int wParam, IntPtr lParam);
+        public static extern int CallNextHookEx(int idHook,int nCode,int wParam,IntPtr lParam);
 
         #endregion
 
@@ -537,7 +537,7 @@ namespace Magicdawn.Win32
         /// </summary>
         /// <param name="hDC"></param>
         /// <returns></returns>
-        [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
+        [DllImport("gdi32.dll",ExactSpelling = true,SetLastError = true)]
         public static extern IntPtr CreateCompatibleDC(IntPtr hDC);
 
         /// <summary>
@@ -545,14 +545,14 @@ namespace Magicdawn.Win32
         /// </summary>
         /// <param name="hdc"></param>
         /// <returns></returns>
-        [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
+        [DllImport("gdi32.dll",ExactSpelling = true,SetLastError = true)]
         public static extern bool DeleteDC(IntPtr hdc);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="hObject"></param>
         /// <returns></returns>
-        [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
+        [DllImport("gdi32.dll",ExactSpelling = true,SetLastError = true)]
         public static extern bool DeleteObject(IntPtr hObject);
         /// <summary>
         /// 
@@ -560,15 +560,15 @@ namespace Magicdawn.Win32
         /// <param name="hDC"></param>
         /// <param name="hObject"></param>
         /// <returns></returns>
-        [DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
-        public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
+        [DllImport("gdi32.dll",ExactSpelling = true,SetLastError = true)]
+        public static extern IntPtr SelectObject(IntPtr hDC,IntPtr hObject);
         #endregion
 
         #region Other Methods
         /// <summary>
         /// 创建一个无符号的32位值作为lParam参数中使用一个消息
         /// </summary>
-        public static int MakeLParam(int LoWord, int HiWord)
+        public static int MakeLParam(int LoWord,int HiWord)
         {
             return ((HiWord << 16) | (LoWord & 0xffff));
         }
@@ -598,7 +598,7 @@ namespace Magicdawn.Win32
         /// <param name="code">GetLastError函数的返回值</param>
         public static string GetLastErrorString(int code)
         {
-            switch (code)
+            switch(code)
             {
                 case 0: return "操作成功完成";
                 case 1: return "功能错误";
@@ -2989,24 +2989,24 @@ namespace Magicdawn.Win32
         }
         #endregion
 
-        #region dwmapi.dll,毛玻璃效果
+        #region dwmapi.dll
         /// <summary>
-        /// 用于验证是否可用
+        /// 判断是否启用了Aero效果
         /// </summary>
         /// <returns></returns>
-        [DllImport("dwmapi.dll", PreserveSig = false)]
-        public static extern bool DwmIsCompositionEnabled();
+        [DllImport("dwmapi.dll")]
+        public static extern bool DwmIsCompositionEnabled(ref bool isEnabled);
 
         /// <summary>
         /// 设置毛玻璃
         /// </summary>
         /// <param name="hWnd"></param>
         /// <param name="area"></param>
-        //[DllImport("dwmapi.dll")]
-        //public static extern void DwmExtendFrameIntoClientArea(
-        //    IntPtr hWnd,
-        //    ref Area area
-        //);
+        [DllImport("dwmapi.dll")]
+        public static extern void DwmExtendFrameIntoClientArea(
+            IntPtr hWnd,
+            ref Margin margin
+        );
         #endregion
     }
 }

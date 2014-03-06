@@ -5,14 +5,19 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using Magicdawn;
+using System.Diagnostics;
 
 /*
  * 2014-2-13 15:23:09修改
+ * 2014-3-6 20:27:46 增加Aero效果,增加ClientAreaDrag客户区拖动
  * 
  * BY Magicdawn
  */
 namespace Magicdawn
 {
+    /// <summary>
+    /// 对于WinForm的Form辅助类
+    /// </summary>
     public class FormHelper
     {
         #region 无边框拖动
@@ -38,11 +43,11 @@ namespace Magicdawn
         /// </summary>
         /// <param name="frm"></param>
         /// <param name="m"></param>
-        public static void NoneBorderFormDrag(Form frm, Message m)
+        public static void NoneBorderFormDrag(Form frm,Message m)
         {
             try
             {
-                if (m.Msg == Win32.WinMsg.WM_LBUTTONDOWN)
+                if(m.Msg == Win32.WinMsg.WM_LBUTTONDOWN)
                 {
                     Win32.Api.ReleaseCapture();
                     Win32.Api.SendMessage(frm.Handle,
@@ -51,7 +56,7 @@ namespace Magicdawn
                         0);
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 throw ex;
             }
@@ -63,9 +68,9 @@ namespace Magicdawn
         /// </summary>
         /// <param name="frm">窗体</param>
         /// <param name="m">Message消息</param>
-        public static void NoneBorderFormDragQuick(Form frm, ref Message m)
+        public static void NoneBorderFormDragQuick(Form frm,ref Message m)
         {
-            if (m.Msg == Win32.WinMsg.WM_LBUTTONDOWN)
+            if(m.Msg == Win32.WinMsg.WM_LBUTTONDOWN)
             {
                 m.Msg = Win32.WinMsg.WM_NCLBUTTONDOWN;//修改为非客户区域,左键
                 m.WParam = new IntPtr(Win32.Consts.HTCAPTION);
@@ -80,50 +85,106 @@ namespace Magicdawn
         public static void NonborderFormDragWithEvent(Control frm)
         {
             Point p = new Point();
-            frm.MouseDown += (down_sender, down_e) => {
-                if (down_e.Button == MouseButtons.Left)
+            frm.MouseDown += (down_sender,down_e) => {
+                if(down_e.Button == MouseButtons.Left)
                 {
                     p = down_e.Location;
                 }
             };
-            frm.MouseMove += (move_sender, move_e) => {
-                if (move_e.Button == MouseButtons.Left)
+            frm.MouseMove += (move_sender,move_e) => {
+                if(move_e.Button == MouseButtons.Left)
+                {
+                    frm.Location = Control.MousePosition.Minus(p);
+                    Debug.WriteLine("move p " + p);
+                }
+            };
+        }
+
+        #endregion
+
+        #region 有边框,非标题栏区域拖动,对于有标题的控件,如GroupBox等都适用
+        /// <summary>
+        /// 有边框,使非标题栏区域拖动,对于有标题的控件,如GroupBox等都适用
+        /// </summary>
+        /// <param name="frm">要设置的窗体</param>
+        public static void EnableClientAreaDrag(Form frm)
+        {
+            Point p = new Point();
+            frm.MouseDown += (down_sender,down_e) => {
+                if(down_e.Button == MouseButtons.Left)
+                {
+                    //p为当前鼠标 至 窗体左上角位置
+                    p = frm.PointToScreen(down_e.Location).Minus(frm.Location);
+                }
+            };
+            frm.MouseMove += (move_sender,move_e) => {
+                if(move_e.Button == MouseButtons.Left)
                 {
                     frm.Location = Control.MousePosition.Minus(p);
                 }
             };
         }
-
         #endregion
 
-        #region 控件相关
-        //设置某一控件在父控件中居中
+        #region 使整个窗体呈现毛玻璃Aero效果
         /// <summary>
-        /// 设置某一控件在父控件中居中
+        /// 设置窗体Aero效果
         /// </summary>
-        /// <param name="this"></param>
-        /// <param name="parent"></param>
-        public static void SetCenter(Control @this, Control parent = null)
-        {
-            @this.Location = GetCenterLocation(@this, parent);
-        }
-
-        /// <summary>
-        /// 一个控件在父控件中居中时,此控件的Location
-        /// </summary>
-        /// <param name="this"></param>
-        /// <param name="parent"></param>
+        /// <param name="frm"></param>
         /// <returns></returns>
-        public static Point GetCenterLocation(Control @this, Control parent = null)
+        public static bool EnableAeroForm(Form frm)
         {
-            if (parent == null)
+            //http://hi.baidu.com/44498/item/9019813042b89d352f0f810e
+            //http://tieba.baidu.com/p/1807435732
+            if(Environment.OSVersion.Version.Major < 6)
             {
-                parent = @this.Parent;
+                throw new NotSupportedException("只支持Windows Vista及以上版本的Windows系统");
             }
-            var x = (parent.Width - @this.Width) / 2;
-            var y = (parent.Height - @this.Height) / 2;
-            return new Point(x, y);
+            var isEnabled = false;
+            Win32.Api.DwmIsCompositionEnabled(ref isEnabled);
+            if(!isEnabled)
+            {
+                throw new NotSupportedException("当前系统不支持Aero效果");
+            }
+            try
+            {
+                //设置颜色
+                frm.BackColor = frm.TransparencyKey = Color.FromArgb(250,250,249);
+                var m = new Margin {
+                    Top = frm.ClientRectangle.Height,
+                    Bottom = -1
+                };
+                Win32.Api.DwmExtendFrameIntoClientArea(frm.Handle,ref m);
+
+                //resize仍然可以运行
+                frm.Resize += delegate {
+                    m.Top = frm.ClientRectangle.Height;
+                    Win32.Api.DwmExtendFrameIntoClientArea(frm.Handle,ref m);
+                };
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
         }
         #endregion
+
+        #region 设置窗体,I prefer
+
+        #endregion
+    }
+
+    //系统绘制玻璃效果距离窗体边框的大小
+    /// <summary>
+    /// 系统绘制玻璃效果距离窗体边框的大小
+    /// </summary>
+    public struct Margin
+    {
+        //顺序有关系
+        public int Left;
+        public int Right;
+        public int Top;
+        public int Bottom;
     }
 }

@@ -1,0 +1,10 @@
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.dll
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.pdb
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.dll
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\nunit.framework.dll
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.pdb
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.xml
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\nunit.framework.xml
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\obj\Debug\Magicdawn.UnitTest.csprojResolveAssemblyReference.cache
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\obj\Debug\Magicdawn.UnitTest.dll
+D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\obj\Debug\Magicdawn.UnitTest.pdb
