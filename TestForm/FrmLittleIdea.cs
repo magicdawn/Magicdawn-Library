@@ -12,9 +12,17 @@ namespace TestForm
 {
     public partial class FrmLittleIdea : Magicdawn.Winform.MyForm
     {
+        private FrmMain frmMain;
+
         public FrmLittleIdea()
         {
             InitializeComponent();
+        }
+
+        public FrmLittleIdea(FrmMain frmMain)
+        {
+            // TODO: Complete member initialization
+            this.Owner = frmMain;
         }
     }
 }

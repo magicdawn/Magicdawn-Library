@@ -80,6 +80,13 @@
               查找 System.Drawing.Bitmap 类型的本地化资源。
             </summary>
         </member>
+        <member name="M:CharExtension.IsChineseCharacter(System.Char)">
+            <summary>
+            是否是中文字符
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
         <member name="T:ControlExtension">
             <summary>
             一些控件的扩展方法
@@ -178,6 +185,22 @@
             </summary>
             <param name="@this">要操作的控件</param>
             <returns>子控件,泛型List</returns>
+        </member>
+        <member name="M:StringExtension.StartWithOneOf(System.String,System.String[])">
+            <summary>
+            StartWith 从序列中选择
+            </summary>
+            <param name="this"></param>
+            <param name="starts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StringExtension.EndWithOneOf(System.String,System.String[])">
+            <summary>
+            EndWithOneOf 序列,默认区分大小写
+            </summary>
+            <param name="this"></param>
+            <param name="ends"></param>
+            <returns></returns>
         </member>
         <member name="F:Magicdawn.AnimateHelper.AnimationInterval">
             <summary>
@@ -381,24 +404,6 @@
             读写用到的进程名
             </summary>
         </member>
-        <member name="M:Magicdawn.StringHelper.StartWithOneOf(System.String,System.Boolean,System.String[])">
-            <summary>
-            StartWith 从序列中选择
-            </summary>
-            <param name="this"></param>
-            <param name="ignoreCase">默认区分大小写</param>
-            <param name="starts"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Magicdawn.StringHelper.EndWithOneOf(System.String,System.Boolean,System.String[])">
-            <summary>
-            EndWithOneOf 序列,默认区分大小写
-            </summary>
-            <param name="this"></param>
-            <param name="ignoreCase">默认区分大小写</param>
-            <param name="ends"></param>
-            <returns></returns>
-        </member>
         <member name="T:Magicdawn.AnimateOption">
             <summary>
             仿Jq动画,方法的参数,封装
@@ -584,7 +589,7 @@
             <summary>
             MouseDown,MouseMove事件版本,需要在Form_Load里使用
             </summary>
-            <param name="frm"></param>
+            <param name="ctl"></param>
         </member>
         <member name="M:Magicdawn.FormHelper.EnableClientAreaDrag(System.Windows.Forms.Form)">
             <summary>
@@ -684,6 +689,51 @@
         <member name="F:Magicdawn.ShakeDirection.Reverse">
             <summary>
             与默认相反
+            </summary>
+        </member>
+        <member name="T:Magicdawn.Util.CustomFormatter`1">
+            <summary>
+            自定义 格式化器(CustomFormatter)基类
+            </summary>
+            <typeparam name="T">要处理的类型</typeparam>
+        </member>
+        <member name="M:Magicdawn.Util.CustomFormatter`1.FormatCustom(System.String,`0)">
+            <summary>
+            用于 处理自定义 格式的详细方法,处理 自定义格式 类型,如果不重写,也返回FormatRegular
+            </summary>
+            <param name="format">格式</param>
+            <param name="arg">数据</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="T:Magicdawn.Util.Singleton`1">
+            <summary>
+            单例模式,类
+            由于扩展了Validator,Creator等,将Instance属性改为GetInstance方法
+            </summary>
+            <typeparam name="T">要获取单例的类型</typeparam>
+        </member>
+        <member name="M:Magicdawn.Util.Singleton`1.GetInstance(System.Func{`0,System.Boolean},System.Func{`0})">
+            <summary>
+            获取实例
+            </summary>
+            <param name="validator">自定义验证器</param>
+            <param name="creator">自定义构造器</param>
+            <returns>单例</returns>
+        </member>
+        <member name="T:Magicdawn.Util.SingletonValidators">
+            <summary>
+            预定义的验证器
+            有些类的实例,虽然不为null,但是已经不能使用,如Dispose过的Form
+            </summary>
+        </member>
+        <member name="F:Magicdawn.Util.SingletonValidators.FormValidator">
+            <summary>
+            用于WinForm的构造器
+            </summary>
+        </member>
+        <member name="T:Magicdawn.Util.SingletonCreators">
+            <summary>
+            预定义的构造器
             </summary>
         </member>
         <member name="T:Magicdawn.Win32.Consts">
@@ -3713,6 +3763,7 @@
         <member name="M:Magicdawn.Win32.Api.UpdateLayeredWindow(System.IntPtr,System.IntPtr,System.Drawing.Point@,System.Drawing.Size@,System.IntPtr,System.Drawing.Point@,System.Int32,Magicdawn.Win32.BLENDFUNCTION@,System.Int32)">
             <summary>
             小红帽的UpdatelayeredWindow,透明窗口
+            
             </summary>
             <param name="hWnd"></param>
             <param name="hdcDst"></param>
@@ -4182,12 +4233,12 @@
             用于DawnTextBox的设计器
             </summary>
         </member>
-        <member name="T:Magicdawn.FtpClient">
+        <member name="T:Magicdawn.Util.FtpClient">
             <summary>
             FTP客户端操作类
             </summary>
         </member>
-        <member name="M:Magicdawn.FtpClient.#ctor(System.String,System.String,System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.#ctor(System.String,System.String,System.String)">
             <summary>
             创建FTP工具
             <para>
@@ -4198,7 +4249,7 @@
             <param name="userId">用户名</param>
             <param name="password">密码</param>
         </member>
-        <member name="M:Magicdawn.FtpClient.#ctor(System.String,System.String,System.String,System.Int32,System.Net.IWebProxy,System.Boolean,System.Boolean,System.Boolean)">
+        <member name="M:Magicdawn.Util.FtpClient.#ctor(System.String,System.String,System.String,System.Int32,System.Net.IWebProxy,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             创建FTP工具
             </summary>
@@ -4211,7 +4262,7 @@
             <param name="useBinary">允许二进制</param>
             <param name="usePassive">允许被动模式</param>
         </member>
-        <member name="M:Magicdawn.FtpClient.CreateRequest(System.String,System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.CreateRequest(System.String,System.String)">
             <summary>
             创建一个FTP请求
             </summary>
@@ -4219,14 +4270,14 @@
             <param name="method">请求方法</param>
             <returns>FTP请求</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.Upload(System.IO.FileInfo,System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.Upload(System.IO.FileInfo,System.String)">
             <summary>
             把文件上传到FTP服务器的RemotePath下
             </summary>
             <param name="localFile">本地文件信息</param>
             <param name="remoteFileName">要保存到FTP文件服务器上的名称</param>
         </member>
-        <member name="M:Magicdawn.FtpClient.Download(System.String,System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.Download(System.String,System.String)">
             <summary>
             从当前目录下下载文件
             <para>
@@ -4237,7 +4288,7 @@
             <param name="localName">本地文件名称</param>
             <returns>返回一个值,指示是否下载成功</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.Rename(System.String,System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.Rename(System.String,System.String)">
             <summary>
             文件更名
             </summary>
@@ -4245,47 +4296,47 @@
             <param name="newFileName">新文件名</param>
             <returns>返回一个值,指示更名是否成功</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.GetFileList">
+        <member name="M:Magicdawn.Util.FtpClient.GetFileList">
             <summary>
             获取当前目录下文件列表
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.GetFileDetails">
+        <member name="M:Magicdawn.Util.FtpClient.GetFileDetails">
             <summary>
             获取详细列表
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.DeleteFile(System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.DeleteFile(System.String)">
             <summary>
             删除FTP服务器上的文件
             </summary>
             <param name="fileName">文件名称</param>
             <returns>返回一个值,指示是否删除成功</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.MakeDirectory(System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.MakeDirectory(System.String)">
             <summary>
             在当前目录下创建文件夹
             </summary>
             <param name="dirName">文件夹名称</param>
             <returns>返回一个值,指示是否创建成功</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.DeleteDirectory(System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.DeleteDirectory(System.String)">
             <summary>
             删除文件夹
             </summary>
             <param name="dirName">文件夹名称</param>
             <returns>返回一个值,指示是否删除成功</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.GetFileSize(System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.GetFileSize(System.String)">
             <summary>
             获取文件大小
             </summary>
             <param name="fileName"></param>
             <returns></returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.Append(System.IO.FileInfo,System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.Append(System.IO.FileInfo,System.String)">
             <summary>
             给FTP服务器上的文件追加内容
             </summary>
@@ -4293,7 +4344,7 @@
             <param name="remoteFileName">FTP服务器上的文件</param>
             <returns>返回一个值,指示是否追加成功</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.Append(System.IO.Stream,System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.Append(System.IO.Stream,System.String)">
             <summary>
             给FTP服务器上的文件追加内容
             </summary>
@@ -4301,54 +4352,54 @@
             <param name="remoteFileName">FTP服务器上的文件</param>
             <returns>返回一个值,指示是否追加成功</returns>
         </member>
-        <member name="M:Magicdawn.FtpClient.CheckFileExist(System.String)">
+        <member name="M:Magicdawn.Util.FtpClient.CheckFileExist(System.String)">
             <summary>
             检查文件是否存在,需先设置RemotePath
             </summary>
             <param name="fileName">要检查的文件名</param>
             <returns>返回一个值,指示要检查的文件是否存在</returns>
         </member>
-        <member name="P:Magicdawn.FtpClient.Host">
+        <member name="P:Magicdawn.Util.FtpClient.Host">
             <summary>
             主机
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.UserId">
+        <member name="P:Magicdawn.Util.FtpClient.UserId">
             <summary>
             登录用户名
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.Password">
+        <member name="P:Magicdawn.Util.FtpClient.Password">
             <summary>
             密码
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.Proxy">
+        <member name="P:Magicdawn.Util.FtpClient.Proxy">
             <summary>
             代理
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.Port">
+        <member name="P:Magicdawn.Util.FtpClient.Port">
             <summary>
             端口
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.EnableSsl">
+        <member name="P:Magicdawn.Util.FtpClient.EnableSsl">
             <summary>
             EnableSsl 
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.UsePassive">
+        <member name="P:Magicdawn.Util.FtpClient.UsePassive">
             <summary>
             被动模式
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.UseBinary">
+        <member name="P:Magicdawn.Util.FtpClient.UseBinary">
             <summary>
             二进制方式
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.RemotePath">
+        <member name="P:Magicdawn.Util.FtpClient.RemotePath">
             <summary>
             远端路径
             <para>
@@ -4356,7 +4407,7 @@
             </para>
             </summary>
         </member>
-        <member name="P:Magicdawn.FtpClient.CurrentDirectory">
+        <member name="P:Magicdawn.Util.FtpClient.CurrentDirectory">
             <summary>
             获取FTP服务器上的当前路径
             </summary>
@@ -4467,6 +4518,33 @@
             UserPaint为true,自绘
             </summary>
             <param name="e"></param>
+        </member>
+        <member name="M:Magicdawn.Winform.SimpleBrowser.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:Magicdawn.Winform.SimpleBrowser.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Magicdawn.Winform.SimpleBrowser.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Magicdawn.Winform.SimpleBrowser.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:Magicdawn.Winform.SimpleBrowser.IsTxtUrlEnabled">
+            <summary>
+            输网址的文本框是否可用
+            </summary>
         </member>
         <member name="T:Magicdawn.Winform.ToolStripRadioButton">
             <summary>

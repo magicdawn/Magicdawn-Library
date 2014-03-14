@@ -16,5 +16,11 @@ namespace TestForm
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender,EventArgs e)
+        {
+            Magicdawn.Util.MyStringBuilder sb = new Magicdawn.Util.MyStringBuilder();
+            sb += "hello";
+        }
     }
 }

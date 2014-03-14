@@ -9,10 +9,9 @@ D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.csproj.GenerateRes
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.exe
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.pdb
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.FrmMain.resources
-D:\C#\project\Magicdawn Library\TestForm\bin\Release\WHC.OrderWater.Commons.dll
-D:\C#\project\Magicdawn Library\TestForm\bin\Release\WHC.OrderWater.Commons.xml
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.FrmAnimate.resources
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.FrmControlHelper.resources
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.FrmDragHelper.resources
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.Form1.resources
 D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.FrmProcessHelper.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Release\TestForm.FrmGlassHelper.resources

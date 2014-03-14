@@ -33,6 +33,7 @@
             this.toolStripButton1 = new Magicdawn.Winform.ToolStripRadioButton();
             this.toolStripButton2 = new Magicdawn.Winform.ToolStripRadioButton();
             this.toolStripButton3 = new Magicdawn.Winform.ToolStripRadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,11 +79,22 @@
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(24, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 321);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -99,5 +111,6 @@
         private Magicdawn.Winform.ToolStripRadioButton toolStripButton1;
         private Magicdawn.Winform.ToolStripRadioButton toolStripButton2;
         private Magicdawn.Winform.ToolStripRadioButton toolStripButton3;
+        private System.Windows.Forms.Button button1;
     }
 }

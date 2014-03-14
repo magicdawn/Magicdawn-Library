@@ -81,21 +81,34 @@ namespace Magicdawn
         /// <summary>
         /// MouseDown,MouseMove事件版本,需要在Form_Load里使用
         /// </summary>
-        /// <param name="frm"></param>
-        public static void NonborderFormDragWithEvent(Control frm)
+        /// <param name="ctl"></param>
+        public static void NonborderFormDragWithEvent(Control ctl)
         {
-            Point p = new Point();
-            frm.MouseDown += (down_sender,down_e) => {
+            Point p = new Point(0,0);
+            ctl.MouseDown += (down_sender,down_e) => {
                 if(down_e.Button == MouseButtons.Left)
                 {
                     p = down_e.Location;
+                    //Debug.WriteLine("mouse down p " + p);
                 }
             };
-            frm.MouseMove += (move_sender,move_e) => {
+            ctl.MouseMove += (move_sender,move_e) => {
                 if(move_e.Button == MouseButtons.Left)
                 {
-                    frm.Location = Control.MousePosition.Minus(p);
-                    Debug.WriteLine("move p " + p);
+                    if(ctl is Form)
+                    {
+                        ctl.Location = Control.MousePosition.Minus(p);
+                    }
+                    else
+                    {
+                        ctl.FindForm().Location = Control.MousePosition
+                            .Minus(p)//平移p
+                            .Minus(ctl.Location);//平移控件的location
+                    }
+
+                    //Debug.WriteLine("mouse move p " + p);
+                    //Debug.WriteLine("control.mouse" + Control.MousePosition);
+                    //Console.WriteLine("frm loc" + ctl.Location);
                 }
             };
         }

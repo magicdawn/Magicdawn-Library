@@ -58,6 +58,7 @@
             this.qqRadioButton1 = new Magicdawn.Winform.QQRadioButton();
             this.qqCheckBox1 = new Magicdawn.Winform.QQCheckBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -175,6 +176,7 @@
             // 
             this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.button15);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Location = new System.Drawing.Point(331, 52);
@@ -361,6 +363,16 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "number textbox";
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(233, 19);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(114, 23);
+            this.button15.TabIndex = 1;
+            this.button15.Text = "FrmSimpleBrowser";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -430,6 +442,7 @@
         private System.Windows.Forms.Label label3;
         private Magicdawn.Winform.NumberTextBox numberTextBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button15;
     }
 }
 

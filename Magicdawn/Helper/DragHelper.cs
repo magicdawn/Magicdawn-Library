@@ -51,17 +51,17 @@ namespace Magicdawn
         /// </summary>
         /// <param name="ctl"></param>
         /// <param name="format"></param>
-        public static void EnableDragTarget(this Control ctl, string format)
+        public static void EnableDragTarget(this Control ctl,string format)
         {
             ctl.AllowDrop = true;//启用AllowDrop
             //sender dragEventArgs
-            ctl.DragEnter += (s, e) => {
+            ctl.DragEnter += (s,e) => {
                 /*
                  * 也可以不验证格式,在GetData()时不会出错
                  */
-                if (e.Data.GetDataPresent(format))//格式符合要求,
+                if(e.Data.GetDataPresent(format))//格式符合要求,
                 {
-                    if ((e.KeyState & CtrlMask) == CtrlMask)//按住Ctrl键了
+                    if((e.KeyState & CtrlMask) == CtrlMask)//按住Ctrl键了
                     {
                         e.Effect = DragDropEffects.Copy;
                     }
@@ -79,11 +79,11 @@ namespace Magicdawn
         /// <param name="ctl">控件</param>
         /// <param name="format">拖放数据格式</param>
         /// <param name="act">拿到数据后操作,输入参数为data,拿到强制转换即可</param>
-        public static void EnableDragTarget(this Control ctl, string format, Action<object> act)
+        public static void EnableDragTarget(this Control ctl,string format,Action<object> act)
         {
-            EnableDragTarget(ctl, format);
-            //drag dop
-            ctl.DragDrop += (s, e) => {
+            EnableDragTarget(ctl,format);
+            //drag drop
+            ctl.DragDrop += (s,e) => {
                 act(e.Data.GetData(format));
             };
         }
@@ -94,14 +94,14 @@ namespace Magicdawn
         /// </summary>
         /// <param name="ctl"></param>
         /// <param name="mode"></param>
-        public static void EnableDragTextTarget(this Control ctl, EDragTextMode mode
+        public static void EnableDragTextTarget(this Control ctl,EDragTextMode mode
             = EDragTextMode.Replace)
         {
-            EnableDragTarget(ctl, DataFormats.Text);//drag enter
+            EnableDragTarget(ctl,DataFormats.Text);//drag enter
 
-            ctl.DragDrop += (s, e) => {
+            ctl.DragDrop += (s,e) => {
                 string txt = (string)e.Data.GetData(DataFormats.Text);
-                switch (mode)
+                switch(mode)
                 {
                     case EDragTextMode.Append:
                         ctl.Text += txt;
@@ -129,21 +129,38 @@ namespace Magicdawn
         /// </summary>
         /// <param name="ctl">控件</param>
         /// <param name="act">自定义文本到达时的操作</param>
-        public static void EnableDragTextTarget(this Control ctl, Action<string> act)
+        public static void EnableDragTextTarget(this Control ctl,Action<string> act)
         {
-            EnableDragTarget(ctl, DataFormats.Text, data => act((string)(data)));
+            EnableDragTarget(ctl,DataFormats.Text,data => act((string)(data)));
         }
 
+        //文件拖拽操作
+        public static void EnbaleDragFileTarget(this Control ctl,Action<string> act)
+        {
+            //启用拖放
+            EnableDragTarget(ctl,DataFormats.FileDrop);
+            ctl.DragDrop += (s,e) => {
+                act(e.GetDragFile());
+            };
+        }
+        //文件列表
+        public static void EnableDragFilesTarget(this Control ctl,Action<string[]> act)
+        {
+            EnableDragTarget(ctl,DataFormats.FileDrop);
+            ctl.DragDrop += (s,e) => {
+                act(e.GetDragFiles());
+            };
+        }
         #endregion
 
         #region 数据Drag Source
         //将控件设置为 拖放源(Drag Source)
-        public static void EnableDragSource(this Control ctl, Func<Control, object> getData)
+        public static void EnableDragSource(this Control ctl,Func<Control,object> getData)
         {
-            ctl.MouseDown += (s, e) => {
-                if (e.Button == MouseButtons.Left)
+            ctl.MouseDown += (s,e) => {
+                if(e.Button == MouseButtons.Left)
                 {
-                    ctl.DoDragDrop(getData(ctl), DragDropEffects.All);
+                    ctl.DoDragDrop(getData(ctl),DragDropEffects.All);
                 }
             };
         }
@@ -155,14 +172,14 @@ namespace Magicdawn
         {
             ctl.BringToFront();
             Point p = new Point();
-            ctl.MouseDown += (s, e) => {
-                if (e.Button == MouseButtons.Left)
+            ctl.MouseDown += (s,e) => {
+                if(e.Button == MouseButtons.Left)
                 {
                     p = e.Location;
                 }
             };
-            ctl.MouseMove += (s, e) => {
-                if (e.Button == MouseButtons.Left)
+            ctl.MouseMove += (s,e) => {
+                if(e.Button == MouseButtons.Left)
                 {
                     //mouseposition偏移之后的是屏幕坐标,转换为父控件 的client坐标
                     ctl.Location = ctl.Parent.PointToClient(Control.MousePosition.Minus(p));

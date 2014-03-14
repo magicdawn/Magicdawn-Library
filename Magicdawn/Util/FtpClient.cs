@@ -13,7 +13,7 @@ using System.IO;
  * 
  * 2013-11-12 magicdawn
  */
-namespace Magicdawn
+namespace Magicdawn.Util
 {
     /// <summary>
     /// FTP客户端操作类
@@ -30,8 +30,8 @@ namespace Magicdawn
         /// <param name="host">主机名称</param>
         /// <param name="userId">用户名</param>
         /// <param name="password">密码</param>
-        public FtpClient(string host, string userId, string password)
-            : this(host, userId, password, 21, null, false, true, true)
+        public FtpClient(string host,string userId,string password)
+            : this(host,userId,password,21,null,false,true,true)
         {
         }
 
@@ -46,11 +46,11 @@ namespace Magicdawn
         /// <param name="proxy">代理</param>
         /// <param name="useBinary">允许二进制</param>
         /// <param name="usePassive">允许被动模式</param>
-        public FtpClient(string host, string userId, string password, int port, IWebProxy proxy, bool enableSsl, bool useBinary, bool usePassive)
+        public FtpClient(string host,string userId,string password,int port,IWebProxy proxy,bool enableSsl,bool useBinary,bool usePassive)
         {
             this.userId = userId;
             this.password = password;
-            if (host.ToLower().StartsWith("ftp://"))
+            if(host.ToLower().StartsWith("ftp://"))
             {
                 this.host = host;
             }
@@ -211,7 +211,7 @@ namespace Magicdawn
             set
             {
                 string result = "/";
-                if (!string.IsNullOrEmpty(value) && value != "/")
+                if(!string.IsNullOrEmpty(value) && value != "/")
                 {
                     result = "/" + value.TrimStart('/').TrimEnd('/') + "/";
                 }
@@ -231,11 +231,11 @@ namespace Magicdawn
         /// <param name="url">请求地址</param>
         /// <param name="method">请求方法</param>
         /// <returns>FTP请求</returns>
-        private FtpWebRequest CreateRequest(string url, string method)
+        private FtpWebRequest CreateRequest(string url,string method)
         {
             //建立连接
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(url);
-            request.Credentials = new NetworkCredential(this.userId, this.password);
+            request.Credentials = new NetworkCredential(this.userId,this.password);
             request.Proxy = this.proxy;
             request.KeepAlive = false;//命令执行完毕之后关闭连接
             request.UseBinary = useBinary;
@@ -252,31 +252,31 @@ namespace Magicdawn
         /// </summary>
         /// <param name="localFile">本地文件信息</param>
         /// <param name="remoteFileName">要保存到FTP文件服务器上的名称</param>
-        public bool Upload(FileInfo localFile, string remoteFileName)
+        public bool Upload(FileInfo localFile,string remoteFileName)
         {
             bool result = false;
-            if (localFile.Exists)
+            if(localFile.Exists)
             {
                 string url = Host.TrimEnd('/') + RemotePath + remoteFileName;
-                FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.UploadFile);
+                FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.UploadFile);
 
                 //上传数据
-                using (Stream rs = request.GetRequestStream())
-                using (FileStream fs = localFile.OpenRead())
+                using(Stream rs = request.GetRequestStream())
+                using(FileStream fs = localFile.OpenRead())
                 {
                     byte[] buffer = new byte[4096];//4K
-                    int count = fs.Read(buffer, 0, buffer.Length);
-                    while (count > 0)
+                    int count = fs.Read(buffer,0,buffer.Length);
+                    while(count > 0)
                     {
-                        rs.Write(buffer, 0, count);
-                        count = fs.Read(buffer, 0, buffer.Length);
+                        rs.Write(buffer,0,count);
+                        count = fs.Read(buffer,0,buffer.Length);
                     }
                     fs.Close();
                     result = true;
                 }
                 return result;
             }
-            throw new Exception(string.Format("本地文件不存在,文件路径:{0}", localFile.FullName));
+            throw new Exception(string.Format("本地文件不存在,文件路径:{0}",localFile.FullName));
         }
         #endregion
 
@@ -290,24 +290,24 @@ namespace Magicdawn
         /// <param name="serverName">服务器上的文件名称</param>
         /// <param name="localName">本地文件名称</param>
         /// <returns>返回一个值,指示是否下载成功</returns>
-        public bool Download(string serverName, string localName)
+        public bool Download(string serverName,string localName)
         {
             bool result = false;
-            using (FileStream fs = new FileStream(localName, FileMode.OpenOrCreate)) //创建或打开本地文件
+            using(FileStream fs = new FileStream(localName,FileMode.OpenOrCreate)) //创建或打开本地文件
             {
                 //建立连接
                 string url = Host.TrimEnd('/') + RemotePath + serverName;
-                FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.DownloadFile);
+                FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.DownloadFile);
                 request.ContentOffset = fs.Length;
-                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                 {
                     fs.Position = fs.Length;
                     byte[] buffer = new byte[4096];//4K
-                    int count = response.GetResponseStream().Read(buffer, 0, buffer.Length);
-                    while (count > 0)
+                    int count = response.GetResponseStream().Read(buffer,0,buffer.Length);
+                    while(count > 0)
                     {
-                        fs.Write(buffer, 0, count);
-                        count = response.GetResponseStream().Read(buffer, 0, buffer.Length);
+                        fs.Write(buffer,0,count);
+                        count = response.GetResponseStream().Read(buffer,0,buffer.Length);
                     }
                     response.GetResponseStream().Close();
                 }
@@ -324,14 +324,14 @@ namespace Magicdawn
         /// <param name="oldFileName">原文件名</param>
         /// <param name="newFileName">新文件名</param>
         /// <returns>返回一个值,指示更名是否成功</returns>
-        public bool Rename(string oldFileName, string newFileName)
+        public bool Rename(string oldFileName,string newFileName)
         {
             bool result = false;
             //建立连接
             string url = Host.TrimEnd('/') + RemotePath + oldFileName;
-            FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.Rename);
+            FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.Rename);
             request.RenameTo = newFileName;
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 result = true;
             }
@@ -349,12 +349,12 @@ namespace Magicdawn
             List<string> result = new List<string>();
             //建立连接
             string url = Host.TrimEnd('/') + RemotePath;
-            FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.ListDirectory);
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.ListDirectory);
+            using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 StreamReader reader = new StreamReader(response.GetResponseStream(),UseEncode);//中文文件名
                 string line = reader.ReadLine();
-                while (line != null)
+                while(line != null)
                 {
                     result.Add(line);
                     line = reader.ReadLine();
@@ -374,12 +374,12 @@ namespace Magicdawn
             List<string> result = new List<string>();
             //建立连接
             string url = Host.TrimEnd('/') + RemotePath;
-            FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.ListDirectoryDetails);
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.ListDirectoryDetails);
+            using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 StreamReader reader = new StreamReader(response.GetResponseStream(),UseEncode);//中文文件名
                 string line = reader.ReadLine();
-                while (line != null)
+                while(line != null)
                 {
                     result.Add(line);
                     line = reader.ReadLine();
@@ -400,8 +400,8 @@ namespace Magicdawn
             bool result = false;
             //建立连接
             string url = Host.TrimEnd('/') + RemotePath + fileName;
-            FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.DeleteFile);
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.DeleteFile);
+            using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 result = true;
             }
@@ -421,8 +421,8 @@ namespace Magicdawn
             bool result = false;
             //建立连接
             string url = Host.TrimEnd('/') + RemotePath + dirName;
-            FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.MakeDirectory);
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.MakeDirectory);
+            using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 result = true;
             }
@@ -441,8 +441,8 @@ namespace Magicdawn
             bool result = false;
             //建立连接
             string url = Host.TrimEnd('/') + RemotePath + dirName;
-            FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.RemoveDirectory);
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.RemoveDirectory);
+            using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 result = true;
             }
@@ -461,8 +461,8 @@ namespace Magicdawn
             long result = 0;
             //建立连接
             string url = Host.TrimEnd('/') + RemotePath + fileName;
-            FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.GetFileSize);
-            using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+            FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.GetFileSize);
+            using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
             {
                 result = response.ContentLength;
             }
@@ -478,16 +478,16 @@ namespace Magicdawn
         /// <param name="localFile">本地文件</param>
         /// <param name="remoteFileName">FTP服务器上的文件</param>
         /// <returns>返回一个值,指示是否追加成功</returns>
-        public bool Append(FileInfo localFile, string remoteFileName)
+        public bool Append(FileInfo localFile,string remoteFileName)
         {
-            if (localFile.Exists)
+            if(localFile.Exists)
             {
-                using (FileStream fs = new FileStream(localFile.FullName, FileMode.Open))
+                using(FileStream fs = new FileStream(localFile.FullName,FileMode.Open))
                 {
-                    return Append(fs, remoteFileName);
+                    return Append(fs,remoteFileName);
                 }
             }
-            throw new Exception(string.Format("本地文件不存在,文件路径:{0}", localFile.FullName));
+            throw new Exception(string.Format("本地文件不存在,文件路径:{0}",localFile.FullName));
         }
 
         /// <summary>
@@ -496,23 +496,23 @@ namespace Magicdawn
         /// <param name="stream">数据流(可通过设置偏移来实现从特定位置开始上传)</param>
         /// <param name="remoteFileName">FTP服务器上的文件</param>
         /// <returns>返回一个值,指示是否追加成功</returns>
-        public bool Append(Stream stream, string remoteFileName)
+        public bool Append(Stream stream,string remoteFileName)
         {
             bool result = false;
-            if (stream != null && stream.CanRead)
+            if(stream != null && stream.CanRead)
             {
                 //建立连接
                 string url = Host.TrimEnd('/') + RemotePath + remoteFileName;
-                FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.AppendFile);
-                using (Stream rs = request.GetRequestStream())
+                FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.AppendFile);
+                using(Stream rs = request.GetRequestStream())
                 {
                     //上传数据
                     byte[] buffer = new byte[4096];//4K
-                    int count = stream.Read(buffer, 0, buffer.Length);
-                    while (count > 0)
+                    int count = stream.Read(buffer,0,buffer.Length);
+                    while(count > 0)
                     {
-                        rs.Write(buffer, 0, count);
-                        count = stream.Read(buffer, 0, buffer.Length);
+                        rs.Write(buffer,0,count);
+                        count = stream.Read(buffer,0,buffer.Length);
                     }
                     result = true;
                 }
@@ -531,15 +531,15 @@ namespace Magicdawn
             {
                 string result = string.Empty;
                 string url = Host.TrimEnd('/') + RemotePath;
-                FtpWebRequest request = CreateRequest(url, WebRequestMethods.Ftp.PrintWorkingDirectory);
-                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                FtpWebRequest request = CreateRequest(url,WebRequestMethods.Ftp.PrintWorkingDirectory);
+                using(FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                 {
                     string temp = response.StatusDescription;
                     int start = temp.IndexOf('"') + 1;
                     int end = temp.LastIndexOf('"');
-                    if (end >= start)
+                    if(end >= start)
                     {
-                        result = temp.Substring(start, end - start);
+                        result = temp.Substring(start,end - start);
                     }
                 }
                 return result;
@@ -557,15 +557,15 @@ namespace Magicdawn
         public bool CheckFileExist(string fileName)
         {
             bool result = false;
-            if (fileName != null && fileName.Trim().Length > 0)
+            if(fileName != null && fileName.Trim().Length > 0)
             {
                 fileName = fileName.Trim();
                 List<string> files = GetFileList();
-                if (files != null && files.Count > 0)
+                if(files != null && files.Count > 0)
                 {
-                    foreach (string file in files)
+                    foreach(string file in files)
                     {
-                        if (file.ToLower() == fileName.ToLower())
+                        if(file.ToLower() == fileName.ToLower())
                         {
                             result = true;
                             break;

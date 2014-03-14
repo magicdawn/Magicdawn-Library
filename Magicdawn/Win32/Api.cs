@@ -458,6 +458,7 @@ namespace Magicdawn.Win32
 
         /// <summary>
         /// 小红帽的UpdatelayeredWindow,透明窗口
+        /// 
         /// </summary>
         /// <param name="hWnd"></param>
         /// <param name="hdcDst"></param>
@@ -470,7 +471,17 @@ namespace Magicdawn.Win32
         /// <param name="dwFlags"></param>
         /// <returns></returns>
         [DllImport("user32.dll",ExactSpelling = true,SetLastError = true)]
-        public static extern bool UpdateLayeredWindow(IntPtr hWnd,IntPtr hdcDst,ref Point pptDst,ref Size psize,IntPtr hdcSrc,ref Point ppSrc,Int32 crKey,ref BLENDFUNCTION pblend,Int32 dwFlags);
+        public static extern bool UpdateLayeredWindow(
+            IntPtr hWnd,
+            IntPtr hdcDst,
+            ref Point pptDst,
+            ref Size psize,
+            IntPtr hdcSrc,
+            ref Point ppSrc,
+            Int32 crKey,
+            ref BLENDFUNCTION pblend,
+            Int32 dwFlags
+        );
 
         /// <summary>
         /// 该函数获得包含指定点的窗口的句柄。

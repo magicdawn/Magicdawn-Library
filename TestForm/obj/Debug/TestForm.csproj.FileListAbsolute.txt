@@ -16,3 +16,4 @@ D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmAnimate.resources
 D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmControlHelper.resources
 D:\C#\project\Magicdawn Library\TestForm\bin\Debug\Magicdawn.xml
 D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmGlassHelper.resources
+D:\C#\project\Magicdawn Library\TestForm\obj\Debug\TestForm.FrmSimpleBrowser.resources

@@ -1,0 +1,3 @@
+﻿要把bass.dll添加到项目,并把属性设置为 复制到输出目录,始终
+并添加bass.net引用
+http://www.codeproject.com/Articles/55665/MP-Player-for-Windows

@@ -24,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\Debug\Magicdawn.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,7 +55,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Extension\CharExtension.cs" />
     <Compile Include="Extension\ControlExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Helper\AnimateHelper.cs" />
     <Compile Include="Helper\DragHelper.cs" />
     <Compile Include="Extension\ListExtension.cs" />
@@ -76,6 +79,10 @@
     <Compile Include="Helper\UnicodeHelper.cs" />
     <Compile Include="Helper\UrlHelper.cs" />
     <Compile Include="Option\ShakeOption.cs" />
+    <Compile Include="Util\CustomFormatter.cs" />
+    <Compile Include="Util\ICuntomCreateInstance.cs" />
+    <Compile Include="Util\MyStringBuilder.cs" />
+    <Compile Include="Util\Singleton.cs" />
     <Compile Include="Win32\Consts.cs" />
     <Compile Include="Win32\ExternDll.cs" />
     <None Include="Win32\MS\NativeMethods.cs" />
@@ -116,6 +123,12 @@
     <Compile Include="Winform\QQRadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Winform\SimpleBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Winform\SimpleBrowser.Designer.cs">
+      <DependentUpon>SimpleBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Winform\ToolStripRadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -130,6 +143,9 @@
     <EmbeddedResource Include="ControlResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ControlResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winform\SimpleBrowser.resx">
+      <DependentUpon>SimpleBrowser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

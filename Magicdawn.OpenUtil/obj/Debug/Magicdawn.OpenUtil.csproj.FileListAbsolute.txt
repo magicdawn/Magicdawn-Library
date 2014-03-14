@@ -3,3 +3,10 @@ D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Magicdawn.OpenUtil.
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.csprojResolveAssemblyReference.cache
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.dll
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.pdb
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Bass.Net.dll
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Bass.Net.xml
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\bass.dll
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb

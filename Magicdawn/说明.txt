@@ -12,3 +12,54 @@ using Magicdawn;
 	Extension
 	Helper
 	Option
+
+-----------------------------------------------------------------------------
+hwnd [in]
+    Type: HWND
+    窗体的Handle
+    用 WS_EX_LAYERED  CreateWindowEx 创建
+
+hdcDst [in, optional]
+    Type: HDC
+    A handle to a DC for the screen. 
+    This handle is obtained by specifying NULL when calling the function. 
+    It is used for palette color matching when the window contents are updated. 
+ 
+    If hdcDst is NULL, the default palette will be used.
+    If hdcSrc is NULL, hdcDst must be NULL.
+
+pptDst [in, optional]
+	Type: POINT*
+	A pointer to a structure that specifies the new screen position of the layered window.
+	If the current position is not changing, pptDst can be NULL.
+
+psize [in, optional]
+	Type: SIZE*
+	A pointer to a structure that specifies the new size of the layered window.
+	If the size of the window is not changing, psize can be NULL. 
+	If hdcSrc is NULL, psize must be NULL.
+
+hdcSrc [in, optional]
+	Type: HDC
+	A handle to a DC for the surface that defines the layered window. 
+	This handle can be obtained by calling the CreateCompatibleDC function. 
+	If the shape and visual context of the window are not changing, hdcSrc can be NULL.
+
+pptSrc [in, optional]
+	Type: POINT*
+	A pointer to a structure that specifies the location of the layer in the device context. 
+	If hdcSrc is NULL, pptSrc should be NULL.
+
+crKey [in]
+	Type: COLORREF
+	A structure that specifies the color key to be used when composing the layered window. 
+	To generate a COLORREF, use the RGB macro.
+
+pblend [in, optional]
+	Type: BLENDFUNCTION*
+	A pointer to a structure that specifies the transparency value to be used when composing the layered window.
+
+dwFlags [in]
+	Type: DWORD
+	This parameter can be one of the following values.
+	http://msdn.microsoft.com/en-us/library/ms633556(VS.85).aspx

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Magicdawn;
 using Magicdawn.Win32;
+using Magicdawn.Util;
 namespace TestForm
 {
     public partial class FrmMain : Form
@@ -119,7 +120,9 @@ namespace TestForm
 
         private void button11_Click(object sender,EventArgs e)
         {
-            new FrmLittleIdea().Show();
+            Singleton<FrmLittleIdea>.GetInstance(SingletonValidators.FormValidator,delegate {
+                return new FrmLittleIdea(this);
+            }).Show();
         }
 
         private void button9_Click(object sender,EventArgs e)
@@ -158,6 +161,11 @@ namespace TestForm
              *  value :49
              *  0-value:48
              */
+        }
+
+        private void button15_Click(object sender,EventArgs e)
+        {
+            new FrmSimpleBrowser().Show();
         }
     }
 }

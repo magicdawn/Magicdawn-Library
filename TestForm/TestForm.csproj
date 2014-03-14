@@ -97,6 +97,18 @@
     <Compile Include="FrmProcessHelper.Designer.cs">
       <DependentUpon>FrmProcessHelper.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSimpleBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSimpleBrowser.Designer.cs">
+      <DependentUpon>FrmSimpleBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSingleton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSingleton.Designer.cs">
+      <DependentUpon>FrmSingleton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAnimate.resx">
@@ -119,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProcessHelper.resx">
       <DependentUpon>FrmProcessHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSimpleBrowser.resx">
+      <DependentUpon>FrmSimpleBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
