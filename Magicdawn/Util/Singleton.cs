@@ -16,7 +16,7 @@ namespace Magicdawn.Util
         //私有字段
         private static T instance;
         //默认验证器
-        private static Func<T,bool> defaultValidator = instance => !(instance == null);
+        private static Func<T,bool> defaultValidator = instance => (instance != null);
         //默认构建器
         private static Func<T> defaultCreator = () => (T)(Activator.CreateInstance(typeof(T)));
 
@@ -71,7 +71,7 @@ namespace Magicdawn.Util
     public static class SingletonValidators
     {
         /// <summary>
-        /// 用于WinForm的构造器
+        /// 用于WinForm的验证器,如果没有Disposed表示实例还可用
         /// </summary>
         public static Func<Form,bool> FormValidator = frm => !frm.IsDisposed;
     }

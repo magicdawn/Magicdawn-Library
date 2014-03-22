@@ -61,8 +61,7 @@ namespace Magicdawn.Winform
         #region Browser事件
         private void Browser_DocumentCompleted(object sender,
             WebBrowserDocumentCompletedEventArgs e)
-        {
-            
+        {            
             foreach(HtmlElement link in this.Browser.Document.Links)
             {
                 //链接在本窗体打开
@@ -104,7 +103,6 @@ namespace Magicdawn.Winform
         //如果不存在,添加http://
         string GetCompleteUrl(string url)
         {
-
             if(!url.StartWithOneOf("http://","https://"))
             {
                 url = "http://" + url;

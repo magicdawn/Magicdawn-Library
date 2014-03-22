@@ -11,45 +11,26 @@ namespace Magicdawn
 {
     public class HttpHelper
     {
-        #region 属性
-        public string UserAgent { get; set; }//浏览器类型
-        public Encoding ResponseEncoding { get; set; }//响应编码
-        #endregion
-
-        //构造函数
-        public HttpHelper()
+        //不设置UserAgent,不设置Encoding
+        public static string Request(string url,RequestOption option = null)
         {
-            this.UserAgent = Browser.Chrome;//默认为Chrome
-            this.ResponseEncoding = Encoding.UTF8;//默认UTF8编码
-        }
-
-        //实际访问
-        public string Request(string url)
-        {
-            string html;
+            option = option ?? new RequestOption();
             try
             {
                 var req = WebRequest.Create(url) as HttpWebRequest;
-                req.UserAgent = this.UserAgent;
 
                 var res = req.GetResponse() as HttpWebResponse;
                 var resStream = res.GetResponseStream();
 
-                using (var sr = new StreamReader(resStream, this.ResponseEncoding))
+                using(var sr = new StreamReader(resStream))
                 {
-                    html = sr.ReadToEnd();
+                    return sr.ReadToEnd();
                 }
             }
-            catch (WebException)
+            catch(WebException)
             {
-                html = string.Empty;
+                return string.Empty;
             }
-            return html;
-        }
-
-        public MatchCollection Request(string url, string regexPattern)
-        {
-            return Regex.Matches(this.Request(url), regexPattern);
         }
     }
 }

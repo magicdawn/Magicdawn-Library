@@ -16,4 +16,15 @@ public static class CharExtension
         var high = '\u9FA5';
         return @this.Between(low,high);
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="charSeq"></param>
+    /// <returns></returns>
+    public static string GetString(this IEnumerable<char> charSeq)
+    {
+        //哈哈
+        return new string(charSeq.ToArray());
+    }
 }

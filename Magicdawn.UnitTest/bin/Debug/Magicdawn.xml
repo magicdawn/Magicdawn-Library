@@ -87,6 +87,13 @@
             <param name="this"></param>
             <returns></returns>
         </member>
+        <member name="M:CharExtension.GetString(System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            
+            </summary>
+            <param name="charSeq"></param>
+            <returns></returns>
+        </member>
         <member name="T:ControlExtension">
             <summary>
             一些控件的扩展方法
@@ -186,6 +193,15 @@
             <param name="@this">要操作的控件</param>
             <returns>子控件,泛型List</returns>
         </member>
+        <member name="M:StringExtension.OneOf(System.String,System.Predicate{System.String},System.String[])">
+            <summary>
+            有一个满足返回就true
+            </summary>
+            <param name="current"></param>
+            <param name="validator"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
         <member name="M:StringExtension.StartWithOneOf(System.String,System.String[])">
             <summary>
             StartWith 从序列中选择
@@ -200,6 +216,22 @@
             </summary>
             <param name="this"></param>
             <param name="ends"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StringExtension.EqualOneOf(System.String,System.String[])">
+            <summary>
+            有一个相等就返回true
+            </summary>
+            <param name="current"></param>
+            <param name="equals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StringExtension.ContainOneOf(System.String,System.String[])">
+            <summary>
+            current包含list的任意一个,返回true
+            </summary>
+            <param name="current"></param>
+            <param name="list"></param>
             <returns></returns>
         </member>
         <member name="F:Magicdawn.AnimateHelper.AnimationInterval">
@@ -728,7 +760,7 @@
         </member>
         <member name="F:Magicdawn.Util.SingletonValidators.FormValidator">
             <summary>
-            用于WinForm的构造器
+            用于WinForm的验证器,如果没有Disposed表示实例还可用
             </summary>
         </member>
         <member name="T:Magicdawn.Util.SingletonCreators">
