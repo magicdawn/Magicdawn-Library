@@ -17,8 +17,8 @@ namespace Magicdawn
         /// <returns>MD5值</returns>
         public static string Md5Encrypt(string text)
         {
-            //采用默认,GB2312编码
-            byte[] buffer = MD5.Create().ComputeHash(System.Text.Encoding.Default.GetBytes(text));
+            //采用默认,UTF8编码
+            byte[] buffer = MD5.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes(text));
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < buffer.Length; i++)
             {

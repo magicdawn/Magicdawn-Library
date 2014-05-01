@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Magicdawn;
 
-namespace Magicdawn.UnitTest
+namespace Magicdawn.UnitTest.Extension
 {
     [NUnit.Framework.TestFixture]
     public class BasicTypeExtension

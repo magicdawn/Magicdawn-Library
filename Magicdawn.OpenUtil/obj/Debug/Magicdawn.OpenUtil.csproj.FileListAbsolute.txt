@@ -6,7 +6,5 @@ D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Bass.Net.dll
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Bass.Net.xml
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\bass.dll
-D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.dll
-D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
-D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.pdb
-D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Newtonsoft.Json.dll
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Newtonsoft.Json.xml

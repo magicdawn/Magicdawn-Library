@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Un4seen.Bass;
-namespace Magicdawn.OpenUtil
+namespace Magicdawn
 {
     /// <summary>
     /// BassPlayer封装
@@ -21,7 +21,7 @@ namespace Magicdawn.OpenUtil
         }
 
         /// <summary>
-        /// 
+        /// 加载一首歌曲
         /// </summary>
         /// <param name="url"></param>
         public void LoadSong(string url)

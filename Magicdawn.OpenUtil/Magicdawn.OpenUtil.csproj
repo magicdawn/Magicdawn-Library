@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bass.Net">
-      <HintPath>..\..\..\开源库\Bass.NET\Bass.Net.dll</HintPath>
+      <HintPath>..\..\..\Library\Bass.NET\Bass.Net.dll</HintPath>
     </Reference>
     <Reference Include="CsQuery">
       <HintPath>..\..\..\play\开源库\CsQuery\distribution\CsQuery.dll</HintPath>
@@ -41,6 +41,9 @@
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.Shell">
       <HintPath>..\..\..\开源库\MS-API-Code-Pack\Windows API Code Pack 1.1\binaries\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Library\Json.net\4.5.6\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,8 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bass\BassPlayer.cs" />
+    <Compile Include="Newtonsoft.Json\JsonHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="伍华聪-单例.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bass.dll">

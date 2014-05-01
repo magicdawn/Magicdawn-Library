@@ -1,1 +1,6 @@
 ﻿OpenUtil是开源库
+
+类命名空间一致Magicdawn
+
+因为涉及到引用问题,如果写在Magicdawn项目里面,会导致Magicdawn很庞大
+这些类要用的时候复制过去

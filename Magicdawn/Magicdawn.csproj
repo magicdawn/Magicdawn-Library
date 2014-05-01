@@ -25,6 +25,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\Debug\Magicdawn.XML</DocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -61,6 +62,7 @@
     <Compile Include="Helper\AnimateHelper.cs" />
     <Compile Include="Helper\DragHelper.cs" />
     <Compile Include="Extension\ListExtension.cs" />
+    <Compile Include="Helper\IOHelper.cs" />
     <Compile Include="Helper\MemoryHelper.cs" />
     <Compile Include="Helper\ProcessHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />

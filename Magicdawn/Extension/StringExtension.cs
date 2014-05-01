@@ -74,4 +74,15 @@ public static class StringExtension
     {
         return current.OneOf(current.Contains,list);
     }
+
+    /// <summary>
+    /// 等同于String.Format()
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="objs"></param>
+    /// <returns></returns>
+    public static string format(this string str,params string[] objs)
+    {
+        return string.Format(str,objs);
+    }
 }

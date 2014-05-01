@@ -234,6 +234,14 @@
             <param name="list"></param>
             <returns></returns>
         </member>
+        <member name="M:StringExtension.format(System.String,System.String[])">
+            <summary>
+            等同于String.Format()
+            </summary>
+            <param name="str"></param>
+            <param name="objs"></param>
+            <returns></returns>
+        </member>
         <member name="F:Magicdawn.AnimateHelper.AnimationInterval">
             <summary>
             动画间隔13ms根据jquery而来
@@ -381,6 +389,12 @@
         <!-- 对于成员“T:ListExtension”忽略有格式错误的 XML 注释 -->
         <!-- 对于成员“M:ListExtension.Remove``1(System.Collections.Generic.List{``0},``0[])”忽略有格式错误的 XML 注释 -->
         <!-- 对于成员“M:ListExtension.Add``1(System.Collections.Generic.List{``0},``0[])”忽略有格式错误的 XML 注释 -->
+        <member name="M:Magicdawn.IOHelper.GetFileName(System.String)">
+            <summary>
+            从文件完整路径获取 文件名
+            </summary>
+            <param name="path"></param>
+        </member>
         <member name="T:Magicdawn.MemoryHelper">
             <summary>
             Windows内存操作
