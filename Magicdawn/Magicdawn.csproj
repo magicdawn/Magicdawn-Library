@@ -103,7 +103,7 @@
     <Compile Include="Win32\NotUnderstand\MouseEventExtArgs.cs" />
     <Compile Include="Win32\NotUnderstand\MouseHook.cs" />
     <Compile Include="Win32\Api.cs" />
-    <Compile Include="Win32\Structs.cs" />
+    <Compile Include="Win32\Struct.cs" />
     <Compile Include="Winform\MyTextBoxActionList.cs" />
     <Compile Include="Winform\MyTextBoxDesigner.cs" />
     <Compile Include="Util\FtpClient.cs" />

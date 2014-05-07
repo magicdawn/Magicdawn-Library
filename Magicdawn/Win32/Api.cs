@@ -250,9 +250,9 @@ namespace Magicdawn.Win32
         /// <para>该函数检取光标的位置，以屏幕坐标表示。</para>
         /// <para>返回值：如果成功，返回值非零；如果失败，返回值为零。</para>
         /// </summary>
-        /// <param name="lpPoint">随同指针在屏幕像素坐标中的位置载入的一个结构</param>
+        /// <param name="point">随同指针在屏幕像素坐标中的位置载入的一个结构</param>
         [DllImport("user32.dll")]
-        public static extern bool GetCursorPos(ref Point lpPoint);
+        public static extern bool GetCursorPos(out POINT point);
 
         /// <summary>
         /// 

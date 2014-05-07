@@ -236,7 +236,7 @@
         </member>
         <member name="M:StringExtension.format(System.String,System.String[])">
             <summary>
-            等同于String.Format()
+            等同于String.Format(),小写format,大写 "xxx".Format报错
             </summary>
             <param name="str"></param>
             <param name="objs"></param>
@@ -3626,12 +3626,12 @@
             <param name="hWnd">目标窗口</param>
             <param name="lpRect">指定一个矩形，用客户区域的大小载入（以像素为单位）</param>
         </member>
-        <member name="M:Magicdawn.Win32.Api.GetCursorPos(System.Drawing.Point@)">
+        <member name="M:Magicdawn.Win32.Api.GetCursorPos(Magicdawn.Win32.POINT@)">
             <summary>
             <para>该函数检取光标的位置，以屏幕坐标表示。</para>
             <para>返回值：如果成功，返回值非零；如果失败，返回值为零。</para>
             </summary>
-            <param name="lpPoint">随同指针在屏幕像素坐标中的位置载入的一个结构</param>
+            <param name="point">随同指针在屏幕像素坐标中的位置载入的一个结构</param>
         </member>
         <member name="M:Magicdawn.Win32.Api.GetDC(System.IntPtr)">
             <summary>
@@ -3938,6 +3938,57 @@
             </summary>
             <param name="hWnd"></param>
             <param name="area"></param>
+        </member>
+        <member name="T:Magicdawn.Win32.POINT">
+            <summary>
+            表示在二维平面中定义点的、整数 X 和 Y 坐标的有序对。
+            </summary>
+        </member>
+        <member name="F:Magicdawn.Win32.POINT.X">
+            <summary>
+            X 坐标
+            </summary>
+        </member>
+        <member name="F:Magicdawn.Win32.POINT.Y">
+            <summary>
+            Y 坐标
+            </summary>
+        </member>
+        <member name="M:Magicdawn.Win32.POINT.#ctor(System.Int32,System.Int32)">
+            <summary>
+            初始化 Magicdawn.Win32.Point 结构的新实例。
+            </summary>
+            <param name="x">x 水平坐标</param>
+            <param name="y">y 垂直坐标</param>
+        </member>
+        <member name="M:Magicdawn.Win32.POINT.Parse(System.Object)">
+            <summary>
+            将System.Drawing.Point 等内置Point结构转化为Api使用的POINT
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Magicdawn.Win32.SIZE">
+            <summary>
+            存储一个有序整数对，通常为矩形的宽度和高度。
+            </summary>
+        </member>
+        <member name="F:Magicdawn.Win32.SIZE.Width">
+            <summary>
+            获取或设置此 SIZE 的水平分量。
+            </summary>
+        </member>
+        <member name="F:Magicdawn.Win32.SIZE.Height">
+            <summary>
+            获取或设置此 SIZE 的垂直分量。
+            </summary>
+        </member>
+        <member name="M:Magicdawn.Win32.SIZE.#ctor(System.Int32,System.Int32)">
+            <summary>
+            初始化 Magicdawn.Win32.SIZE 结构的新实例。
+            </summary>
+            <param name="width">此 SIZE 的水平分量</param>
+            <param name="height">此 SIZE 的垂直分量。</param>
         </member>
         <member name="T:Magicdawn.Win32.RECT">
             <summary>

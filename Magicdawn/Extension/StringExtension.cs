@@ -76,7 +76,7 @@ public static class StringExtension
     }
 
     /// <summary>
-    /// 等同于String.Format()
+    /// 等同于String.Format(),小写format,大写 "xxx".Format报错
     /// </summary>
     /// <param name="str"></param>
     /// <param name="objs"></param>

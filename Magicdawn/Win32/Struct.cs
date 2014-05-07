@@ -6,70 +6,71 @@ using System.Drawing;
 //Download by http://www.codefans.net
 namespace Magicdawn.Win32
 {
-    #region 删除的
-    ////Point SIZE与.NET中并无区别
-    ///// <summary>
-    ///// 表示在二维平面中定义点的、整数 X 和 Y 坐标的有序对。
-    ///// </summary>
-    //[StructLayout(LayoutKind.Sequential)]
-    //public struct Point
-    //{
-    //    /// <summary>
-    //    /// X 坐标
-    //    /// </summary>
-    //    public int X;
-    //    /// <summary>
-    //    /// Y 坐标
-    //    /// </summary>
-    //    public int Y;
+    /// <summary>
+    /// 表示在二维平面中定义点的、整数 X 和 Y 坐标的有序对。
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct POINT
+    {
+        /// <summary>
+        /// X 坐标
+        /// </summary>
+        public int X;
+        /// <summary>
+        /// Y 坐标
+        /// </summary>
+        public int Y;
+        /// <summary>
+        /// 初始化 Magicdawn.Win32.Point 结构的新实例。
+        /// </summary>
+        /// <param name="x">x 水平坐标</param>
+        /// <param name="y">y 垂直坐标</param>
+        public POINT(int x,int y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
 
-    //    /// <summary>
-    //    /// 初始化 Magicdawn.Win32.Point 结构的新实例。
-    //    /// </summary>
-    //    /// <param name="x">x 水平坐标</param>
-    //    /// <param name="y">y 垂直坐标</param>
-    //    public Point(int x, int y)
-    //    {
-    //        this.X = x;
-    //        this.Y = y;
-    //    }
-    //}
+        /// <summary>
+        /// 将System.Drawing.Point 等内置Point结构转化为Api使用的POINT
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
+        public static POINT Parse(dynamic point)
+        {
+            return new POINT(
+                ((int)point.X),
+                ((int)point.Y)
+            );
+        }
+    }
 
-    ///// <summary>
-    ///// 存储一个有序整数对，通常为矩形的宽度和高度。
-    ///// </summary>
-    //[StructLayout(LayoutKind.Sequential)]
-    //public struct SIZE
-    //{
-    //    #region 变量
+    /// <summary>
+    /// 存储一个有序整数对，通常为矩形的宽度和高度。
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct SIZE
+    {
+        /// <summary>
+        /// 获取或设置此 SIZE 的水平分量。
+        /// </summary>
+        public int Width;
+        /// <summary>
+        /// 获取或设置此 SIZE 的垂直分量。
+        /// </summary>
+        public int Height;
 
-    //    /// <summary>
-    //    /// 获取或设置此 SIZE 的水平分量。
-    //    /// </summary>
-    //    public int Width;
-    //    /// <summary>
-    //    /// 获取或设置此 SIZE 的垂直分量。
-    //    /// </summary>
-    //    public int Height;
-
-    //    #endregion
-
-    //    #region 构造函数
-
-    //    /// <summary>
-    //    /// 初始化 Magicdawn.Win32.SIZE 结构的新实例。
-    //    /// </summary>
-    //    /// <param name="width">此 SIZE 的水平分量</param>
-    //    /// <param name="height">此 SIZE 的垂直分量。</param>
-    //    public SIZE(int width, int height)
-    //    {
-    //        this.Width = width;
-    //        this.Height = height;
-    //    }
-
-    //    #endregion
-    //}
-    #endregion
+        /// <summary>
+        /// 初始化 Magicdawn.Win32.SIZE 结构的新实例。
+        /// </summary>
+        /// <param name="width">此 SIZE 的水平分量</param>
+        /// <param name="height">此 SIZE 的垂直分量。</param>
+        public SIZE(int width,int height)
+        {
+            this.Width = width;
+            this.Height = height;
+        }
+    }
 
     /// <summary>
     /// 存储一组整数，共四个，表示一个矩形的位置和大小
@@ -106,7 +107,7 @@ namespace Magicdawn.Win32
         /// <param name="top">此 RECT 结构上边缘的 y 坐标。</param>
         /// <param name="right">x 坐标，该坐标是此 RECT 结构的 X 与 Width 属性值之和。</param>
         /// <param name="bottom">y 坐标，该坐标是此 RECT 结构的 Y 与 Height 属性值之和。</param>
-        public RECT(int left, int top, int right, int bottom)
+        public RECT(int left,int top,int right,int bottom)
         {
             this.Left = left;
             this.Top = top;
@@ -135,7 +136,7 @@ namespace Magicdawn.Win32
         /// </summary>
         public Rectangle Rect
         {
-            get { return new Rectangle(this.Left, this.Top, this.Right - this.Left, this.Bottom - this.Top); }
+            get { return new Rectangle(this.Left,this.Top,this.Right - this.Left,this.Bottom - this.Top); }
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Magicdawn.Win32
         /// </summary>
         public Size Size
         {
-            get { return new Size(this.Right - this.Left, this.Bottom - this.Top); }
+            get { return new Size(this.Right - this.Left,this.Bottom - this.Top); }
         }
 
         #endregion
@@ -186,7 +187,7 @@ namespace Magicdawn.Win32
         /// <summary>
         /// 鼠标的屏幕坐标
         /// </summary>
-        public Point Point;
+        public POINT Point;
 
         /// <summary>
         /// 鼠标所按下的键
@@ -230,12 +231,12 @@ namespace Magicdawn.Win32
         /// <summary>
         /// 文件的显示名
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+        [MarshalAs(UnmanagedType.ByValTStr,SizeConst = 260)]
         public string szDisplayName;
         /// <summary>
         /// 文件的类型名
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 80)]
+        [MarshalAs(UnmanagedType.ByValTStr,SizeConst = 80)]
         public string szTypeName;
     }
 
