@@ -2,4 +2,3 @@ D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\bin\Debug\Magicdawn.DotNetB
 D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\bin\Debug\Magicdawn.DotNetBars.pdb
 D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\obj\Debug\Magicdawn.DotNetBars.dll
 D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\obj\Debug\Magicdawn.DotNetBars.pdb
-D:\C#\project\Magicdawn Library\Magicdawn.DotNetBars\obj\Debug\Magicdawn.DotNetBars.csprojResolveAssemblyReference.cache

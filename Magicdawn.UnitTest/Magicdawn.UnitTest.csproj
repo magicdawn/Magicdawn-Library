@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension\ArrayExtension.cs" />
     <Compile Include="Extension\BasicTypeExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

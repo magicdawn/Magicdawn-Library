@@ -10,9 +10,9 @@ namespace Magicdawn.UnitTest.Extension
     public class StringExtension
     {
         [NUnit.Framework.Test]
-        public void Format()
+        public void format()
         {
-            var expect = "Hello World";//期望值
+            object expect = "Hello World";//期望值
             var actual = "{0} {1}".format("Hello","World");//实际运行值
 
             NUnit.Framework.Assert.AreEqual(expect,actual);

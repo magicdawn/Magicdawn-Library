@@ -81,7 +81,7 @@ public static class StringExtension
     /// <param name="str"></param>
     /// <param name="objs"></param>
     /// <returns></returns>
-    public static string format(this string str,params string[] objs)
+    public static string format(this string str,params object[] objs)
     {
         return string.Format(str,objs);
     }

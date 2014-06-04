@@ -56,6 +56,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Extension\ArrayExtension.cs" />
     <Compile Include="Extension\CharExtension.cs" />
     <Compile Include="Extension\ControlExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />

@@ -80,6 +80,14 @@
               查找 System.Drawing.Bitmap 类型的本地化资源。
             </summary>
         </member>
+        <member name="M:ArrayExtension.ForEach``1(``0[],System.Action{``0})">
+            <summary>
+            Same to Array.ForEach(array,action)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="action"></param>
+        </member>
         <member name="M:CharExtension.IsChineseCharacter(System.Char)">
             <summary>
             是否是中文字符
@@ -234,7 +242,7 @@
             <param name="list"></param>
             <returns></returns>
         </member>
-        <member name="M:StringExtension.format(System.String,System.String[])">
+        <member name="M:StringExtension.format(System.String,System.Object[])">
             <summary>
             等同于String.Format(),小写format,大写 "xxx".Format报错
             </summary>
