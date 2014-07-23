@@ -67,7 +67,6 @@
     <Compile Include="Helper\MemoryHelper.cs" />
     <Compile Include="Helper\ProcessHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />
-    <Compile Include="Option\RequestOption.cs" />
     <Compile Include="Option\AnimateOption.cs" />
     <Compile Include="Option\DragTextMode.cs" />
     <Compile Include="Extension\BasicTypeExtension.cs" />
@@ -86,6 +85,7 @@
     <Compile Include="Util\CustomFormatter.cs" />
     <Compile Include="Util\MyStringBuilder.cs" />
     <Compile Include="Util\Singleton.cs" />
+    <Compile Include="Util\StringFinder.cs" />
     <Compile Include="Win32\Consts.cs" />
     <Compile Include="Win32\ExternDll.cs" />
     <None Include="Win32\MS\NativeMethods.cs" />
@@ -109,7 +109,7 @@
     <Compile Include="Winform\MyTextBoxDesigner.cs" />
     <Compile Include="Util\FtpClient.cs" />
     <Compile Include="Http\Browser.cs" />
-    <Compile Include="Http\HttpHelper.cs" />
+    <Compile Include="Helper\HttpHelper.cs" />
     <Compile Include="Helper\Md5Helper.cs" />
     <Compile Include="Helper\SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

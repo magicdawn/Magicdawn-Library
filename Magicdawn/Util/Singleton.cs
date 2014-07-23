@@ -16,7 +16,19 @@ namespace Magicdawn.Util
         //私有字段
         private static T instance;
         //默认验证器
-        private static Func<T,bool> defaultValidator = instance => (instance != null);
+        private static Func<T,bool> defaultValidator = instance => {
+            if(instance == null) return false;
+
+            var prop = instance.GetType().GetProperty("IsDisposed");
+            if(prop != null)
+            {
+                //如果有IsDisposed属性,返回!IsDisposed
+                return !((bool)prop.GetValue(instance,null));
+            }
+
+            //默认为true
+            return true;
+        };
         //默认构建器
         private static Func<T> defaultCreator = () => (T)(Activator.CreateInstance(typeof(T)));
 

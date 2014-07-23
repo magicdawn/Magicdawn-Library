@@ -10,26 +10,31 @@ namespace Magicdawn
 {
     public class HttpHelper
     {
-        //不设置UserAgent,不设置Encoding
-        public static string Request(string url,RequestOption option = null)
+        //encoding默认为UTF8
+        public static string Request(string url,Encoding encoding = null)
         {
-            option = option ?? new RequestOption();
+            if(encoding == null) encoding = Encoding.UTF8;
             try
             {
                 var req = WebRequest.Create(url) as HttpWebRequest;
-
                 var res = req.GetResponse() as HttpWebResponse;
                 var resStream = res.GetResponseStream();
 
-                using(var sr = new StreamReader(resStream))
+                using(var sr = new StreamReader(resStream,encoding))
                 {
                     return sr.ReadToEnd();
                 }
             }
-            catch(WebException)
+            catch(WebException ex)
             {
                 return string.Empty;
             }
+        }
+
+        public static string DownloadString(string url)
+        {
+            var client = Magicdawn.Util.Singleton<WebClient>.GetInstance();
+            return client.DownloadString(url);
         }
     }
 }

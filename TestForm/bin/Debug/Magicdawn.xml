@@ -790,6 +790,14 @@
             预定义的构造器
             </summary>
         </member>
+        <member name="M:Magicdawn.Util.StringFinder.GetSecondIndex(System.String,System.Int32)">
+            <summary>
+            找另一个符号在template中的位置
+            </summary>
+            <param name="template"></param>
+            <param name="firstIndex"></param>
+            <returns></returns>
+        </member>
         <member name="T:Magicdawn.Win32.Consts">
             <summary>
             Win32 API 常量
@@ -4517,7 +4525,7 @@
             获取FTP服务器上的当前路径
             </summary>
         </member>
-        <member name="T:Magicdawn.Browser">
+        <member name="T:Magicdawn.Http.Browser">
             <summary>
             浏览器类型
             </summary>

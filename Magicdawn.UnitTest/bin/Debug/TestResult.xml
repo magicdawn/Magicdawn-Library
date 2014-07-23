@@ -1,21 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-06-04" time="13:50:45">
-  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8000" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="TAO-PC" user="Administrator" user-domain="TAO-PC" />
+<test-results name="D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.nunit" total="4" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-07-23" time="16:55:07">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5477" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug" machine-name="TAO-PC" user="Administrator" user-domain="TAO-PC" />
   <culture-info current-culture="zh-CN" current-uiculture="zh-CN" />
-  <test-suite type="Project" name="D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.nunit" executed="True" result="Success" success="True" time="0.791" asserts="0">
+  <test-suite type="Project" name="D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.nunit" executed="True" result="Success" success="True" time="0.202" asserts="0">
     <results>
-      <test-suite type="Assembly" name="D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.dll" executed="True" result="Success" success="True" time="0.756" asserts="0">
+      <test-suite type="Assembly" name="D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.dll" executed="True" result="Success" success="True" time="0.173" asserts="0">
         <results>
-          <test-suite type="Namespace" name="Magicdawn" executed="True" result="Success" success="True" time="0.755" asserts="0">
+          <test-suite type="Namespace" name="Magicdawn" executed="True" result="Success" success="True" time="0.173" asserts="0">
             <results>
-              <test-suite type="Namespace" name="UnitTest" executed="True" result="Success" success="True" time="0.754" asserts="0">
+              <test-suite type="Namespace" name="UnitTest" executed="True" result="Success" success="True" time="0.173" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Extension" executed="True" result="Success" success="True" time="0.753" asserts="0">
+                  <test-suite type="Namespace" name="Extension" executed="True" result="Success" success="True" time="0.145" asserts="0">
                     <results>
-                      <test-suite type="TestFixture" name="ArrayExtension" executed="True" result="Success" success="True" time="0.748" asserts="0">
+                      <test-suite type="TestFixture" name="ArrayExtension" executed="True" result="Success" success="True" time="0.088" asserts="0">
                         <results>
-                          <test-case name="Magicdawn.UnitTest.Extension.ArrayExtension.ForEach" executed="True" result="Success" success="True" time="0.719" asserts="0" />
+                          <test-case name="Magicdawn.UnitTest.Extension.ArrayExtension.ForEach" executed="True" result="Success" success="True" time="0.066" asserts="0" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="BasicTypeExtension" executed="True" result="Success" success="True" time="0.021" asserts="0">
+                        <results>
+                          <test-case name="Magicdawn.UnitTest.Extension.BasicTypeExtension.TestBetween" executed="True" result="Success" success="True" time="0.020" asserts="2" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="StringExtension" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                        <results>
+                          <test-case name="Magicdawn.UnitTest.Extension.StringExtension.format" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="Util" executed="True" result="Success" success="True" time="0.020" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="StringFinder" executed="True" result="Success" success="True" time="0.019" asserts="0">
+                        <results>
+                          <test-case name="Magicdawn.UnitTest.Util.StringFinder.TestGetSecondIndex" executed="True" result="Success" success="True" time="0.018" asserts="1" />
                         </results>
                       </test-suite>
                     </results>

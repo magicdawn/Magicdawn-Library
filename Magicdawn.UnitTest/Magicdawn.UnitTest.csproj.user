@@ -3,5 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files %28x86%29\NUnit 2.6.3\bin\nunit.exe</StartProgram>
+    <StartArguments>Magicdawn.UnitTest.nunit</StartArguments>
   </PropertyGroup>
 </Project>
