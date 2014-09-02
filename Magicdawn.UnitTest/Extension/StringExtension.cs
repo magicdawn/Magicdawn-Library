@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Magicdawn;
+using NUnit.Framework;
 
 namespace Magicdawn.UnitTest.Extension
 {
@@ -16,6 +17,15 @@ namespace Magicdawn.UnitTest.Extension
             var actual = "{0} {1}".format("Hello","World");//实际运行值
 
             NUnit.Framework.Assert.AreEqual(expect,actual);
+        }
+
+        [NUnit.Framework.Test]
+        public void ContainOneOf()
+        {
+            var s = "a b c d";
+            Assert.AreEqual(true,s.ContainOneOf("a b"));
+            Assert.AreEqual(true,s.ContainOneOf("a","e"));
+            Assert.AreEqual(false,s.ContainOneOf("ab"));
         }
     }
 }

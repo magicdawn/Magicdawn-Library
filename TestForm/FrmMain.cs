@@ -120,9 +120,6 @@ namespace TestForm
 
         private void button11_Click(object sender,EventArgs e)
         {
-            Singleton<FrmLittleIdea>.GetInstance(SingletonValidators.FormValidator,delegate {
-                return new FrmLittleIdea(this);
-            }).Show();
             this.Controls.OfType<TextBox>();
         }
 

@@ -7,7 +7,7 @@ using System.IO;
 namespace Magicdawn
 {
     //TODO: 测试类
-    public class IOHelper
+    public class PathHelper
     {
         #region 文件名
         /// <summary>

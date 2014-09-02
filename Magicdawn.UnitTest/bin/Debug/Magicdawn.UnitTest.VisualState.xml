@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1000]D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.nunit</TopNode>
-  <SelectedNode>[0-1010]Magicdawn</SelectedNode>
+  <SelectedNode>[0-1000]D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.nunit</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.nunit" Expanded="true" />
-    <Node UniqueName="[0-1009]D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.dll" Expanded="true" />
-    <Node UniqueName="[0-1010]Magicdawn" Expanded="true" />
-    <Node UniqueName="[0-1011]Magicdawn.UnitTest" Expanded="true" />
-    <Node UniqueName="[0-1012]Magicdawn.UnitTest.Extension" Expanded="true" />
+    <Node UniqueName="[0-1012]D:\C#\project\Magicdawn Library\Magicdawn.UnitTest\bin\Debug\Magicdawn.UnitTest.dll" Expanded="true" />
+    <Node UniqueName="[0-1013]Magicdawn" Expanded="true" />
+    <Node UniqueName="[0-1014]Magicdawn.UnitTest" Expanded="true" />
+    <Node UniqueName="[0-1015]Magicdawn.UnitTest.Extension" Expanded="true" />
     <Node UniqueName="[0-1001]Magicdawn.UnitTest.Extension.ArrayExtension" Expanded="true" />
     <Node UniqueName="[0-1003]Magicdawn.UnitTest.Extension.BasicTypeExtension" Expanded="true" />
-    <Node UniqueName="[0-1005]Magicdawn.UnitTest.Extension.StringExtension" Expanded="true" />
-    <Node UniqueName="[0-1013]Magicdawn.UnitTest.Util" Expanded="true" />
-    <Node UniqueName="[0-1007]Magicdawn.UnitTest.Util.StringFinder" Expanded="true" />
+    <Node UniqueName="[0-1005]Magicdawn.UnitTest.Extension.QueueExtension" Expanded="true" />
+    <Node UniqueName="[0-1007]Magicdawn.UnitTest.Extension.StringExtension" Expanded="true" />
+    <Node UniqueName="[0-1016]Magicdawn.UnitTest.Util" Expanded="true" />
+    <Node UniqueName="[0-1010]Magicdawn.UnitTest.Util.StringFinder" Expanded="true" />
   </Nodes>
 </VisualState>

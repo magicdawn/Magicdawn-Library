@@ -1,6 +1,5 @@
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Magicdawn.OpenUtil.dll
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Magicdawn.OpenUtil.pdb
-D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.csprojResolveAssemblyReference.cache
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.dll
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.pdb
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Bass.Net.dll
@@ -8,3 +7,4 @@ D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Bass.Net.xml
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\bass.dll
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Newtonsoft.Json.dll
 D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\bin\Debug\Newtonsoft.Json.xml
+D:\C#\project\Magicdawn Library\Magicdawn.OpenUtil\obj\Debug\Magicdawn.OpenUtil.csprojResolveAssemblyReference.cache

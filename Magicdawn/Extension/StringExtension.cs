@@ -16,6 +16,11 @@ public static class StringExtension
     /// <returns></returns>
     public static bool OneOf(this string current,Predicate<string> validator,params string[] list)
     {
+        if(list.Length == 1)
+        {
+            list = list[0].Split();//就是可以写成 StartWithOneOf("abc def")
+        }
+
         foreach(string one in list)
         {
             if(validator(one))

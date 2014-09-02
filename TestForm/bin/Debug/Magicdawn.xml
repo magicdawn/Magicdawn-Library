@@ -346,6 +346,24 @@
             <param name="frm"></param>
             <param name="speed"></param>
         </member>
+        <member name="M:Magicdawn.ConsoleX.Colorful(System.Action)">
+            <summary>
+            在act里面不用担心影响后面的ForegroundColor/BackgroundColor
+            </summary>
+            <param name="act"></param>
+        </member>
+        <member name="M:Magicdawn.ConsoleX.Write(System.String,System.ConsoleColor)">
+            <summary>
+            输出彩色文字
+            </summary>
+            <param name="content"></param>
+            <param name="color"></param>
+        </member>
+        <member name="T:Magicdawn.DebugHelper">
+            <summary>
+            debug工具类
+            </summary>
+        </member>
         <member name="F:Magicdawn.DragHelper.CtrlMask">
             <summary>
             Ctrl键是否按住
@@ -397,12 +415,6 @@
         <!-- 对于成员“T:ListExtension”忽略有格式错误的 XML 注释 -->
         <!-- 对于成员“M:ListExtension.Remove``1(System.Collections.Generic.List{``0},``0[])”忽略有格式错误的 XML 注释 -->
         <!-- 对于成员“M:ListExtension.Add``1(System.Collections.Generic.List{``0},``0[])”忽略有格式错误的 XML 注释 -->
-        <member name="M:Magicdawn.IOHelper.GetFileName(System.String)">
-            <summary>
-            从文件完整路径获取 文件名
-            </summary>
-            <param name="path"></param>
-        </member>
         <member name="T:Magicdawn.MemoryHelper">
             <summary>
             Windows内存操作
@@ -758,37 +770,6 @@
             <param name="format">格式</param>
             <param name="arg">数据</param>
             <returns>处理结果</returns>
-        </member>
-        <member name="T:Magicdawn.Util.Singleton`1">
-            <summary>
-            单例模式,类
-            由于扩展了Validator,Creator等,将Instance属性改为GetInstance方法
-            </summary>
-            <typeparam name="T">要获取单例的类型</typeparam>
-        </member>
-        <member name="M:Magicdawn.Util.Singleton`1.GetInstance(System.Func{`0,System.Boolean},System.Func{`0})">
-            <summary>
-            获取实例
-            </summary>
-            <param name="validator">自定义验证器</param>
-            <param name="creator">自定义构造器</param>
-            <returns>单例</returns>
-        </member>
-        <member name="T:Magicdawn.Util.SingletonValidators">
-            <summary>
-            预定义的验证器
-            有些类的实例,虽然不为null,但是已经不能使用,如Dispose过的Form
-            </summary>
-        </member>
-        <member name="F:Magicdawn.Util.SingletonValidators.FormValidator">
-            <summary>
-            用于WinForm的验证器,如果没有Disposed表示实例还可用
-            </summary>
-        </member>
-        <member name="T:Magicdawn.Util.SingletonCreators">
-            <summary>
-            预定义的构造器
-            </summary>
         </member>
         <member name="M:Magicdawn.Util.StringFinder.GetSecondIndex(System.String,System.Int32)">
             <summary>

@@ -59,11 +59,14 @@
     <Compile Include="Extension\ArrayExtension.cs" />
     <Compile Include="Extension\CharExtension.cs" />
     <Compile Include="Extension\ControlExtension.cs" />
+    <Compile Include="Extension\QueueExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Helper\AnimateHelper.cs" />
+    <Compile Include="Helper\ConsoleX.cs" />
+    <Compile Include="Helper\Debug.cs" />
     <Compile Include="Helper\DragHelper.cs" />
     <Compile Include="Extension\ListExtension.cs" />
-    <Compile Include="Helper\IOHelper.cs" />
+    <None Include="Helper\PathHelper.cs" />
     <Compile Include="Helper\MemoryHelper.cs" />
     <Compile Include="Helper\ProcessHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />
